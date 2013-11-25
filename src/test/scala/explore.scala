@@ -38,7 +38,6 @@ object TriggeringWye extends Properties("Triggering") {
     def go(t0: Long): Process1[Any, Duration] = {
       await1 flatMap {_:Any =>
         val now = System.nanoTime
-        println("Now it is " + now + ". Before it was " + t0)
         emit((now - t0) nanos) ++ go(now)
       }
     }
@@ -65,13 +64,8 @@ object TriggeringWye extends Properties("Triggering") {
       val durationsBetween = combined.filter(b => b) |> interval
 
       // those durations should never be less than the trigger interval
-      println("1")
-      println(combined.runLog.run)
-      println("2")
       val tooLongDurations = durationsBetween.drop(1) filter { _ < reasonableMillis}
-      println("3")
       val result = tooLongDurations.runLog.run.isEmpty
-      println("4")
       result
     }
 
