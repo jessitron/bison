@@ -1,20 +1,5 @@
 package jessitron.tweetbot
 
-sealed trait Message
-case object TimeToTweet extends Message
-
-case class IncomingTweet(tweet: TweetDetail,
-                         opinions: Seq[Opinion]) extends Message {
-   def totalScore = opinions map {_.points} sum
-}
-
-case class TweetThis(tweet: TweetDetail,
-                     inReplyTo: Option[IncomingTweet] = None) extends Message
-
-case class RespondTo(tweet:IncomingTweet) extends Message
-
-case class Opinion(points: Score)
-case class TweetDetail(text: TweetContents)
 
 import scalaz.stream._
 

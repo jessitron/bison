@@ -1,0 +1,3520 @@
+{
+  "statuses": [
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Mon Nov 25 17:25:30 +0000 2013",
+      "id": 4.0502445966637e+17,
+      "id_str": "405024459666374656",
+      "text": "RT @_JamesWard: Check out the video from my #oredev talk \"Building Reactive Apps with Play Framework, Akka, &amp; Scala\" https:\/\/t.co\/yHFR3P2Lgo",
+      "source": "<a href=\"http:\/\/twitter.com\" rel=\"nofollow\">Twitter Web Client<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 1748864856,
+        "id_str": "1748864856",
+        "name": "Shawn Garner",
+        "screen_name": "shawndgarner",
+        "location": "Des Moines",
+        "description": "Agile Software Developer",
+        "url": null,
+        "entities": {
+          "description": {
+            "urls": [
+              
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 4,
+        "friends_count": 40,
+        "listed_count": 0,
+        "created_at": "Sat Sep 07 14:18:17 +0000 2013",
+        "favourites_count": 9,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 10,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+        "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/378800000519100496\/a5095da19cf90331a4a8087484960521_normal.jpeg",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/378800000519100496\/a5095da19cf90331a4a8087484960521_normal.jpeg",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "metadata": {
+          "result_type": "recent",
+          "iso_language_code": "en"
+        },
+        "created_at": "Mon Nov 18 16:27:22 +0000 2013",
+        "id": 4.0247311528168e+17,
+        "id_str": "402473115281678336",
+        "text": "Check out the video from my #oredev talk \"Building Reactive Apps with Play Framework, Akka, &amp; Scala\" https:\/\/t.co\/yHFR3P2Lgo",
+        "source": "web",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 799616,
+          "id_str": "799616",
+          "name": "James Ward",
+          "screen_name": "_JamesWard",
+          "location": "",
+          "description": "Developer Advocate at Typesafe",
+          "url": "http:\/\/t.co\/7ueuYrnt",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/7ueuYrnt",
+                  "expanded_url": "http:\/\/jamesward.com",
+                  "display_url": "jamesward.com",
+                  "indices": [
+                    0,
+                    20
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": [
+                
+              ]
+            }
+          },
+          "protected": false,
+          "followers_count": 7527,
+          "friends_count": 1031,
+          "listed_count": 456,
+          "created_at": "Wed Feb 28 00:07:01 +0000 2007",
+          "favourites_count": 513,
+          "utc_offset": -28800,
+          "time_zone": "Pacific Time (US & Canada)",
+          "geo_enabled": true,
+          "verified": false,
+          "statuses_count": 1861,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "C0DEED",
+          "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+          "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+          "profile_background_tile": false,
+          "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/378800000606902520\/0c9b5897d0f28e53f5666639551a7512_normal.jpeg",
+          "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/378800000606902520\/0c9b5897d0f28e53f5666639551a7512_normal.jpeg",
+          "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/799616\/1353476610",
+          "profile_link_color": "0084B4",
+          "profile_sidebar_border_color": "C0DEED",
+          "profile_sidebar_fill_color": "DDEEF6",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "default_profile": true,
+          "default_profile_image": false,
+          "following": true,
+          "follow_request_sent": false,
+          "notifications": false
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "retweet_count": 15,
+        "favorite_count": 34,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "oredev",
+              "indices": [
+                28,
+                35
+              ]
+            }
+          ],
+          "symbols": [
+            
+          ],
+          "urls": [
+            {
+              "url": "https:\/\/t.co\/yHFR3P2Lgo",
+              "expanded_url": "https:\/\/vimeo.com\/78892176",
+              "display_url": "vimeo.com\/78892176",
+              "indices": [
+                105,
+                128
+              ]
+            }
+          ],
+          "user_mentions": [
+            
+          ]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "retweet_count": 15,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "oredev",
+            "indices": [
+              44,
+              51
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          {
+            "url": "https:\/\/t.co\/yHFR3P2Lgo",
+            "expanded_url": "https:\/\/vimeo.com\/78892176",
+            "display_url": "vimeo.com\/78892176",
+            "indices": [
+              121,
+              144
+            ]
+          }
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "_JamesWard",
+            "name": "James Ward",
+            "id": 799616,
+            "id_str": "799616",
+            "indices": [
+              3,
+              14
+            ]
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Mon Nov 25 17:12:27 +0000 2013",
+      "id": 4.0502117309785e+17,
+      "id_str": "405021173097848832",
+      "text": "The Future of Work is about being more Human - Gamestorming - a session at \u00d8redev 2012 http:\/\/t.co\/yLFbuWgclt #oredev",
+      "source": "<a href=\"http:\/\/twitter.com\/tweetbutton\" rel=\"nofollow\">Tweet Button<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 21852524,
+        "id_str": "21852524",
+        "name": "Xavier Warzee",
+        "screen_name": "xwarzee",
+        "location": "Paris",
+        "description": "Agile coach, Certified Scrum Master, Certified Innovation Games practitioner.\r\n\r\nSoftware Architect and Software Automation fan.\r\nWeb2.0, Bigdata, nosql, ...",
+        "url": "http:\/\/t.co\/1D98Wfm6br",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/1D98Wfm6br",
+                "expanded_url": "http:\/\/warzee.fr",
+                "display_url": "warzee.fr",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 578,
+        "friends_count": 527,
+        "listed_count": 58,
+        "created_at": "Wed Feb 25 10:18:48 +0000 2009",
+        "favourites_count": 84,
+        "utc_offset": 3600,
+        "time_zone": "Paris",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 3314,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "9AE4E8",
+        "profile_background_image_url": "http:\/\/a0.twimg.com\/profile_background_images\/49868465\/2001_Odyssey_the_Sign_v2.jpg",
+        "profile_background_image_url_https": "https:\/\/si0.twimg.com\/profile_background_images\/49868465\/2001_Odyssey_the_Sign_v2.jpg",
+        "profile_background_tile": false,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/378800000214559629\/90cd1bc10b5d4fc720d4c7d6ddfb4fc6_normal.jpeg",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/378800000214559629\/90cd1bc10b5d4fc720d4c7d6ddfb4fc6_normal.jpeg",
+        "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/21852524\/1385380909",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "BDDCAD",
+        "profile_sidebar_fill_color": "DDFFCC",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "oredev",
+            "indices": [
+              110,
+              117
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          {
+            "url": "http:\/\/t.co\/yLFbuWgclt",
+            "expanded_url": "http:\/\/oredev.org\/2012\/sessions\/the-future-of-work-is-about-being-more-human--gamestorming",
+            "display_url": "oredev.org\/2012\/sessions\/\u2026",
+            "indices": [
+              87,
+              109
+            ]
+          }
+        ],
+        "user_mentions": [
+          
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Mon Nov 25 17:06:07 +0000 2013",
+      "id": 4.0501957987928e+17,
+      "id_str": "405019579879284736",
+      "text": "RT @jezhumble: The video of my talk \"Adopting #continuousdelivery\" from #oredev is up: http:\/\/t.co\/DBib1cGst8",
+      "source": "<a href=\"http:\/\/www.hootsuite.com\" rel=\"nofollow\">HootSuite<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 18922309,
+        "id_str": "18922309",
+        "name": "Perforce Software",
+        "screen_name": "perforce",
+        "location": "Alameda, CA",
+        "description": "Bring Order to Innovation.\nPerforce takes the conflict out of collaboration\nfor software code, images, documents... everything.",
+        "url": "http:\/\/t.co\/zp9C4fgvxe",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/zp9C4fgvxe",
+                "expanded_url": "http:\/\/www.perforce.com\/blog",
+                "display_url": "perforce.com\/blog",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 2680,
+        "friends_count": 1279,
+        "listed_count": 82,
+        "created_at": "Tue Jan 13 00:41:00 +0000 2009",
+        "favourites_count": 15,
+        "utc_offset": -28800,
+        "time_zone": "Pacific Time (US & Canada)",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 4359,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "1ABBDC",
+        "profile_background_image_url": "http:\/\/a0.twimg.com\/profile_background_images\/378800000020345003\/bab5e02f58f1d1d4acba0b1ba082629b.png",
+        "profile_background_image_url_https": "https:\/\/si0.twimg.com\/profile_background_images\/378800000020345003\/bab5e02f58f1d1d4acba0b1ba082629b.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/3569974468\/3c876e01d0b1cba3ecc6a3ca37c58927_normal.jpeg",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/3569974468\/3c876e01d0b1cba3ecc6a3ca37c58927_normal.jpeg",
+        "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/18922309\/1352485259",
+        "profile_link_color": "005984",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "C9C9C9",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "continuousdelivery",
+            "indices": [
+              46,
+              65
+            ]
+          },
+          {
+            "text": "oredev",
+            "indices": [
+              72,
+              79
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          {
+            "url": "http:\/\/t.co\/DBib1cGst8",
+            "expanded_url": "http:\/\/oredev.org\/2013\/wed-fri-conference\/adopting-continuous-delivery",
+            "display_url": "oredev.org\/2013\/wed-fri-c\u2026",
+            "indices": [
+              87,
+              109
+            ]
+          }
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "jezhumble",
+            "name": "Jez Humble",
+            "id": 15685575,
+            "id_str": "15685575",
+            "indices": [
+              3,
+              13
+            ]
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Mon Nov 25 09:10:23 +0000 2013",
+      "id": 4.0489985637826e+17,
+      "id_str": "404899856378261504",
+      "text": "RT @jezhumble: The video of my talk \"Adopting #continuousdelivery\" from #oredev is up: http:\/\/t.co\/dv739Zz3Ts",
+      "source": "<a href=\"http:\/\/bufferapp.com\" rel=\"nofollow\">Buffer<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 23513,
+        "id_str": "23513",
+        "name": "Adrian Howard",
+        "screen_name": "adrianh",
+        "location": "Dorset, UK",
+        "description": "Passionate about building effective teams and great products. Quietstars co-founder. Lean Startup lover. Agile & Lean UX fanatic. 50% development & 50% design.",
+        "url": "http:\/\/t.co\/Wz0jxqobws",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/Wz0jxqobws",
+                "expanded_url": "http:\/\/quietstars.com",
+                "display_url": "quietstars.com",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 3646,
+        "friends_count": 2634,
+        "listed_count": 300,
+        "created_at": "Sun Nov 26 21:00:57 +0000 2006",
+        "favourites_count": 815,
+        "utc_offset": 0,
+        "time_zone": "London",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 19306,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "9AE4E8",
+        "profile_background_image_url": "http:\/\/a0.twimg.com\/profile_background_images\/2551906\/PICT0038-small.jpg",
+        "profile_background_image_url_https": "https:\/\/si0.twimg.com\/profile_background_images\/2551906\/PICT0038-small.jpg",
+        "profile_background_tile": false,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/299092306\/adrian-smiling_normal.jpg",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/299092306\/adrian-smiling_normal.jpg",
+        "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/23513\/1348253447",
+        "profile_link_color": "0000FF",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "BEE3FE",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "metadata": {
+          "result_type": "recent",
+          "iso_language_code": "en"
+        },
+        "created_at": "Tue Nov 12 17:34:11 +0000 2013",
+        "id": 4.0031560195391e+17,
+        "id_str": "400315601953910784",
+        "text": "The video of my talk \"Adopting #continuousdelivery\" from #oredev is up: http:\/\/t.co\/dv739Zz3Ts",
+        "source": "web",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 15685575,
+          "id_str": "15685575",
+          "name": "Jez Humble",
+          "screen_name": "jezhumble",
+          "location": "Albany, CA",
+          "description": "Co-author of Continuous Delivery and Lean Enterprise, principal at @thoughtworks. I tweet on software, innovation, and social and economic justice.",
+          "url": "http:\/\/t.co\/ipL0RlcnCQ",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/ipL0RlcnCQ",
+                  "expanded_url": "http:\/\/continuousdelivery.com\/",
+                  "display_url": "continuousdelivery.com",
+                  "indices": [
+                    0,
+                    22
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": [
+                
+              ]
+            }
+          },
+          "protected": false,
+          "followers_count": 6852,
+          "friends_count": 950,
+          "listed_count": 355,
+          "created_at": "Fri Aug 01 04:34:37 +0000 2008",
+          "favourites_count": 109,
+          "utc_offset": -28800,
+          "time_zone": "Pacific Time (US & Canada)",
+          "geo_enabled": false,
+          "verified": false,
+          "statuses_count": 2370,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "B2DFDA",
+          "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme13\/bg.gif",
+          "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme13\/bg.gif",
+          "profile_background_tile": false,
+          "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/1087950067\/jez_studios_normal.jpg",
+          "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/1087950067\/jez_studios_normal.jpg",
+          "profile_link_color": "93A644",
+          "profile_sidebar_border_color": "EEEEEE",
+          "profile_sidebar_fill_color": "FFFFFF",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "default_profile": false,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "retweet_count": 10,
+        "favorite_count": 31,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "continuousdelivery",
+              "indices": [
+                31,
+                50
+              ]
+            },
+            {
+              "text": "oredev",
+              "indices": [
+                57,
+                64
+              ]
+            }
+          ],
+          "symbols": [
+            
+          ],
+          "urls": [
+            {
+              "url": "http:\/\/t.co\/dv739Zz3Ts",
+              "expanded_url": "http:\/\/oredev.org\/2013\/wed-fri-conference\/adopting-continuous-delivery",
+              "display_url": "oredev.org\/2013\/wed-fri-c\u2026",
+              "indices": [
+                72,
+                94
+              ]
+            }
+          ],
+          "user_mentions": [
+            
+          ]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "retweet_count": 10,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "continuousdelivery",
+            "indices": [
+              46,
+              65
+            ]
+          },
+          {
+            "text": "oredev",
+            "indices": [
+              72,
+              79
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          {
+            "url": "http:\/\/t.co\/dv739Zz3Ts",
+            "expanded_url": "http:\/\/oredev.org\/2013\/wed-fri-conference\/adopting-continuous-delivery",
+            "display_url": "oredev.org\/2013\/wed-fri-c\u2026",
+            "indices": [
+              87,
+              109
+            ]
+          }
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "jezhumble",
+            "name": "Jez Humble",
+            "id": 15685575,
+            "id_str": "15685575",
+            "indices": [
+              3,
+              13
+            ]
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Mon Nov 25 08:31:25 +0000 2013",
+      "id": 4.0489005283439e+17,
+      "id_str": "404890052834385920",
+      "text": "RT @mrsungo: @WoodyZuill and a packed house for No Estimates at #oredev http:\/\/t.co\/lA0GwoeHII",
+      "source": "<a href=\"http:\/\/twitter.com\/download\/iphone\" rel=\"nofollow\">Twitter for iPhone<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 14358804,
+        "id_str": "14358804",
+        "name": "Jakob Wolman",
+        "screen_name": "jakobwolman",
+        "location": "Malm\u00f6 \/ Copenhagen",
+        "description": "Agile advocate and developer. Tweet about all the things that fill my daily work, and life. Member of \u00d8redev program committee.",
+        "url": null,
+        "entities": {
+          "description": {
+            "urls": [
+              
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 310,
+        "friends_count": 212,
+        "listed_count": 22,
+        "created_at": "Fri Apr 11 06:40:39 +0000 2008",
+        "favourites_count": 18,
+        "utc_offset": 3600,
+        "time_zone": "Stockholm",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 5001,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "1A1B1F",
+        "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme9\/bg.gif",
+        "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme9\/bg.gif",
+        "profile_background_tile": false,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/1368350147\/jakob_normal.jpg",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/1368350147\/jakob_normal.jpg",
+        "profile_link_color": "2FC2EF",
+        "profile_sidebar_border_color": "181A1E",
+        "profile_sidebar_fill_color": "252429",
+        "profile_text_color": "666666",
+        "profile_use_background_image": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "metadata": {
+          "result_type": "recent",
+          "iso_language_code": "en"
+        },
+        "created_at": "Thu Nov 07 09:52:54 +0000 2013",
+        "id": 3.983875756036e+17,
+        "id_str": "398387575603601408",
+        "text": "@WoodyZuill and a packed house for No Estimates at #oredev http:\/\/t.co\/lA0GwoeHII",
+        "source": "<a href=\"http:\/\/twitter.com\/download\/iphone\" rel=\"nofollow\">Twitter for iPhone<\/a>",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": 94820552,
+        "in_reply_to_user_id_str": "94820552",
+        "in_reply_to_screen_name": "WoodyZuill",
+        "user": {
+          "id": 10239052,
+          "id_str": "10239052",
+          "name": "mrsungo",
+          "screen_name": "mrsungo",
+          "location": "",
+          "description": "I am a dad, husband, comic geek, mac bigot. I work at BigVisible. If I could ingest only one thing, it would be coffee.",
+          "url": "http:\/\/t.co\/tmlqr6xjJz",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/tmlqr6xjJz",
+                  "expanded_url": "http:\/\/drunkenpm.blogspot.com\/",
+                  "display_url": "drunkenpm.blogspot.com",
+                  "indices": [
+                    0,
+                    22
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": [
+                
+              ]
+            }
+          },
+          "protected": false,
+          "followers_count": 842,
+          "friends_count": 946,
+          "listed_count": 56,
+          "created_at": "Wed Nov 14 06:21:19 +0000 2007",
+          "favourites_count": 60,
+          "utc_offset": -21600,
+          "time_zone": "Central Time (US & Canada)",
+          "geo_enabled": true,
+          "verified": false,
+          "statuses_count": 2717,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "8B542B",
+          "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme8\/bg.gif",
+          "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme8\/bg.gif",
+          "profile_background_tile": false,
+          "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/424069408\/images_normal.jpeg",
+          "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/424069408\/images_normal.jpeg",
+          "profile_link_color": "9D582E",
+          "profile_sidebar_border_color": "D9B17E",
+          "profile_sidebar_fill_color": "EADEAA",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "default_profile": false,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "retweet_count": 3,
+        "favorite_count": 0,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "oredev",
+              "indices": [
+                51,
+                58
+              ]
+            }
+          ],
+          "symbols": [
+            
+          ],
+          "urls": [
+            
+          ],
+          "user_mentions": [
+            {
+              "screen_name": "WoodyZuill",
+              "name": "Woody Zuill",
+              "id": 94820552,
+              "id_str": "94820552",
+              "indices": [
+                0,
+                11
+              ]
+            }
+          ],
+          "media": [
+            {
+              "id": 3.9838757545261e+17,
+              "id_str": "398387575452614656",
+              "indices": [
+                59,
+                81
+              ],
+              "media_url": "http:\/\/pbs.twimg.com\/media\/BYdbY53IQAA8zv_.jpg",
+              "media_url_https": "https:\/\/pbs.twimg.com\/media\/BYdbY53IQAA8zv_.jpg",
+              "url": "http:\/\/t.co\/lA0GwoeHII",
+              "display_url": "pic.twitter.com\/lA0GwoeHII",
+              "expanded_url": "http:\/\/twitter.com\/mrsungo\/status\/398387575603601408\/photo\/1",
+              "type": "photo",
+              "sizes": {
+                "medium": {
+                  "w": 600,
+                  "h": 450,
+                  "resize": "fit"
+                },
+                "large": {
+                  "w": 1024,
+                  "h": 768,
+                  "resize": "fit"
+                },
+                "thumb": {
+                  "w": 150,
+                  "h": 150,
+                  "resize": "crop"
+                },
+                "small": {
+                  "w": 340,
+                  "h": 255,
+                  "resize": "fit"
+                }
+              }
+            }
+          ]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "retweet_count": 3,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "oredev",
+            "indices": [
+              64,
+              71
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "mrsungo",
+            "name": "mrsungo",
+            "id": 10239052,
+            "id_str": "10239052",
+            "indices": [
+              3,
+              11
+            ]
+          },
+          {
+            "screen_name": "WoodyZuill",
+            "name": "Woody Zuill",
+            "id": 94820552,
+            "id_str": "94820552",
+            "indices": [
+              13,
+              24
+            ]
+          }
+        ],
+        "media": [
+          {
+            "id": 3.9838757545261e+17,
+            "id_str": "398387575452614656",
+            "indices": [
+              72,
+              94
+            ],
+            "media_url": "http:\/\/pbs.twimg.com\/media\/BYdbY53IQAA8zv_.jpg",
+            "media_url_https": "https:\/\/pbs.twimg.com\/media\/BYdbY53IQAA8zv_.jpg",
+            "url": "http:\/\/t.co\/lA0GwoeHII",
+            "display_url": "pic.twitter.com\/lA0GwoeHII",
+            "expanded_url": "http:\/\/twitter.com\/mrsungo\/status\/398387575603601408\/photo\/1",
+            "type": "photo",
+            "sizes": {
+              "medium": {
+                "w": 600,
+                "h": 450,
+                "resize": "fit"
+              },
+              "large": {
+                "w": 1024,
+                "h": 768,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "small": {
+                "w": 340,
+                "h": 255,
+                "resize": "fit"
+              }
+            },
+            "source_status_id": 3.983875756036e+17,
+            "source_status_id_str": "398387575603601408"
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Mon Nov 25 06:26:47 +0000 2013",
+      "id": 4.0485868538338e+17,
+      "id_str": "404858685383380992",
+      "text": "RT @mrsungo: @WoodyZuill and a packed house for No Estimates at #oredev http:\/\/t.co\/lA0GwoeHII",
+      "source": "<a href=\"http:\/\/twitter.com\" rel=\"nofollow\">Twitter Web Client<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 127002721,
+        "id_str": "127002721",
+        "name": "Marc Kase",
+        "screen_name": "marckase",
+        "location": "",
+        "description": "Hoosier basketball fan, cyclist, technologist, curmudgeon.",
+        "url": null,
+        "entities": {
+          "description": {
+            "urls": [
+              
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 28,
+        "friends_count": 80,
+        "listed_count": 0,
+        "created_at": "Sat Mar 27 18:20:10 +0000 2010",
+        "favourites_count": 5,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 22,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+        "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http:\/\/abs.twimg.com\/sticky\/default_profile_images\/default_profile_6_normal.png",
+        "profile_image_url_https": "https:\/\/abs.twimg.com\/sticky\/default_profile_images\/default_profile_6_normal.png",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "default_profile": true,
+        "default_profile_image": true,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "metadata": {
+          "result_type": "recent",
+          "iso_language_code": "en"
+        },
+        "created_at": "Thu Nov 07 09:52:54 +0000 2013",
+        "id": 3.983875756036e+17,
+        "id_str": "398387575603601408",
+        "text": "@WoodyZuill and a packed house for No Estimates at #oredev http:\/\/t.co\/lA0GwoeHII",
+        "source": "<a href=\"http:\/\/twitter.com\/download\/iphone\" rel=\"nofollow\">Twitter for iPhone<\/a>",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": 94820552,
+        "in_reply_to_user_id_str": "94820552",
+        "in_reply_to_screen_name": "WoodyZuill",
+        "user": {
+          "id": 10239052,
+          "id_str": "10239052",
+          "name": "mrsungo",
+          "screen_name": "mrsungo",
+          "location": "",
+          "description": "I am a dad, husband, comic geek, mac bigot. I work at BigVisible. If I could ingest only one thing, it would be coffee.",
+          "url": "http:\/\/t.co\/tmlqr6xjJz",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/tmlqr6xjJz",
+                  "expanded_url": "http:\/\/drunkenpm.blogspot.com\/",
+                  "display_url": "drunkenpm.blogspot.com",
+                  "indices": [
+                    0,
+                    22
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": [
+                
+              ]
+            }
+          },
+          "protected": false,
+          "followers_count": 842,
+          "friends_count": 946,
+          "listed_count": 56,
+          "created_at": "Wed Nov 14 06:21:19 +0000 2007",
+          "favourites_count": 60,
+          "utc_offset": -21600,
+          "time_zone": "Central Time (US & Canada)",
+          "geo_enabled": true,
+          "verified": false,
+          "statuses_count": 2717,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "8B542B",
+          "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme8\/bg.gif",
+          "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme8\/bg.gif",
+          "profile_background_tile": false,
+          "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/424069408\/images_normal.jpeg",
+          "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/424069408\/images_normal.jpeg",
+          "profile_link_color": "9D582E",
+          "profile_sidebar_border_color": "D9B17E",
+          "profile_sidebar_fill_color": "EADEAA",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "default_profile": false,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "retweet_count": 3,
+        "favorite_count": 0,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "oredev",
+              "indices": [
+                51,
+                58
+              ]
+            }
+          ],
+          "symbols": [
+            
+          ],
+          "urls": [
+            
+          ],
+          "user_mentions": [
+            {
+              "screen_name": "WoodyZuill",
+              "name": "Woody Zuill",
+              "id": 94820552,
+              "id_str": "94820552",
+              "indices": [
+                0,
+                11
+              ]
+            }
+          ],
+          "media": [
+            {
+              "id": 3.9838757545261e+17,
+              "id_str": "398387575452614656",
+              "indices": [
+                59,
+                81
+              ],
+              "media_url": "http:\/\/pbs.twimg.com\/media\/BYdbY53IQAA8zv_.jpg",
+              "media_url_https": "https:\/\/pbs.twimg.com\/media\/BYdbY53IQAA8zv_.jpg",
+              "url": "http:\/\/t.co\/lA0GwoeHII",
+              "display_url": "pic.twitter.com\/lA0GwoeHII",
+              "expanded_url": "http:\/\/twitter.com\/mrsungo\/status\/398387575603601408\/photo\/1",
+              "type": "photo",
+              "sizes": {
+                "medium": {
+                  "w": 600,
+                  "h": 450,
+                  "resize": "fit"
+                },
+                "large": {
+                  "w": 1024,
+                  "h": 768,
+                  "resize": "fit"
+                },
+                "thumb": {
+                  "w": 150,
+                  "h": 150,
+                  "resize": "crop"
+                },
+                "small": {
+                  "w": 340,
+                  "h": 255,
+                  "resize": "fit"
+                }
+              }
+            }
+          ]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "retweet_count": 3,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "oredev",
+            "indices": [
+              64,
+              71
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "mrsungo",
+            "name": "mrsungo",
+            "id": 10239052,
+            "id_str": "10239052",
+            "indices": [
+              3,
+              11
+            ]
+          },
+          {
+            "screen_name": "WoodyZuill",
+            "name": "Woody Zuill",
+            "id": 94820552,
+            "id_str": "94820552",
+            "indices": [
+              13,
+              24
+            ]
+          }
+        ],
+        "media": [
+          {
+            "id": 3.9838757545261e+17,
+            "id_str": "398387575452614656",
+            "indices": [
+              72,
+              94
+            ],
+            "media_url": "http:\/\/pbs.twimg.com\/media\/BYdbY53IQAA8zv_.jpg",
+            "media_url_https": "https:\/\/pbs.twimg.com\/media\/BYdbY53IQAA8zv_.jpg",
+            "url": "http:\/\/t.co\/lA0GwoeHII",
+            "display_url": "pic.twitter.com\/lA0GwoeHII",
+            "expanded_url": "http:\/\/twitter.com\/mrsungo\/status\/398387575603601408\/photo\/1",
+            "type": "photo",
+            "sizes": {
+              "medium": {
+                "w": 600,
+                "h": 450,
+                "resize": "fit"
+              },
+              "large": {
+                "w": 1024,
+                "h": 768,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "small": {
+                "w": 340,
+                "h": 255,
+                "resize": "fit"
+              }
+            },
+            "source_status_id": 3.983875756036e+17,
+            "source_status_id_str": "398387575603601408"
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Mon Nov 25 06:17:49 +0000 2013",
+      "id": 4.048564294522e+17,
+      "id_str": "404856429452197888",
+      "text": "RT @danielsaidi: Just summed up Woody's talk on mob programming at #oredev http:\/\/t.co\/uilPaX0KqN",
+      "source": "<a href=\"http:\/\/twitter.com\/download\/iphone\" rel=\"nofollow\">Twitter for iPhone<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 42869089,
+        "id_str": "42869089",
+        "name": "YannPicarddeMuller",
+        "screen_name": "YannPdeM",
+        "location": "Europe",
+        "description": "Continuous learner. Professionnal Front-End Engineer (HTML, CSS, JavaScript). Occasionnal agile practitionner (Crystal, Kanban). Calligraphy lover.",
+        "url": null,
+        "entities": {
+          "description": {
+            "urls": [
+              
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 353,
+        "friends_count": 1067,
+        "listed_count": 19,
+        "created_at": "Wed May 27 12:18:51 +0000 2009",
+        "favourites_count": 9133,
+        "utc_offset": 3600,
+        "time_zone": "Paris",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 12385,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "EBEBEB",
+        "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme7\/bg.gif",
+        "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme7\/bg.gif",
+        "profile_background_tile": false,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/1450228431\/IMG_0017_1_normal.png",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/1450228431\/IMG_0017_1_normal.png",
+        "profile_link_color": "990000",
+        "profile_sidebar_border_color": "DFDFDF",
+        "profile_sidebar_fill_color": "F3F3F3",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "metadata": {
+          "result_type": "recent",
+          "iso_language_code": "en"
+        },
+        "created_at": "Fri Nov 08 15:57:01 +0000 2013",
+        "id": 3.988415977453e+17,
+        "id_str": "398841597745299458",
+        "text": "Just summed up Woody's talk on mob programming at #oredev http:\/\/t.co\/uilPaX0KqN",
+        "source": "web",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 19703209,
+          "id_str": "19703209",
+          "name": "Daniel Saidi",
+          "screen_name": "danielsaidi",
+          "location": "Stockholm, Sweden",
+          "description": "I am a system developer who lives in Stockholm Sweden, where I work at eBay \/ Tradera. I focus on web and mobility, but anything with code in it rocks my world.",
+          "url": "http:\/\/t.co\/t3cdAyodjr",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/t3cdAyodjr",
+                  "expanded_url": "http:\/\/danielsaidi.com",
+                  "display_url": "danielsaidi.com",
+                  "indices": [
+                    0,
+                    22
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": [
+                
+              ]
+            }
+          },
+          "protected": false,
+          "followers_count": 216,
+          "friends_count": 146,
+          "listed_count": 7,
+          "created_at": "Thu Jan 29 09:19:46 +0000 2009",
+          "favourites_count": 15,
+          "utc_offset": 3600,
+          "time_zone": "Stockholm",
+          "geo_enabled": false,
+          "verified": false,
+          "statuses_count": 2771,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "1A1B1F",
+          "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme9\/bg.gif",
+          "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme9\/bg.gif",
+          "profile_background_tile": false,
+          "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/2845579365\/88acee8e03376ccb868d20b18b6c6e45_normal.png",
+          "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/2845579365\/88acee8e03376ccb868d20b18b6c6e45_normal.png",
+          "profile_link_color": "2FC2EF",
+          "profile_sidebar_border_color": "181A1E",
+          "profile_sidebar_fill_color": "252429",
+          "profile_text_color": "666666",
+          "profile_use_background_image": true,
+          "default_profile": false,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "retweet_count": 5,
+        "favorite_count": 1,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "oredev",
+              "indices": [
+                50,
+                57
+              ]
+            }
+          ],
+          "symbols": [
+            
+          ],
+          "urls": [
+            {
+              "url": "http:\/\/t.co\/uilPaX0KqN",
+              "expanded_url": "http:\/\/danielsaidi.wordpress.com\/2013\/11\/08\/oredev-2013-mob-programming-a-whole-team-approach\/",
+              "display_url": "danielsaidi.wordpress.com\/2013\/11\/08\/ore\u2026",
+              "indices": [
+                58,
+                80
+              ]
+            }
+          ],
+          "user_mentions": [
+            
+          ]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "retweet_count": 5,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "oredev",
+            "indices": [
+              67,
+              74
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          {
+            "url": "http:\/\/t.co\/uilPaX0KqN",
+            "expanded_url": "http:\/\/danielsaidi.wordpress.com\/2013\/11\/08\/oredev-2013-mob-programming-a-whole-team-approach\/",
+            "display_url": "danielsaidi.wordpress.com\/2013\/11\/08\/ore\u2026",
+            "indices": [
+              75,
+              97
+            ]
+          }
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "danielsaidi",
+            "name": "Daniel Saidi",
+            "id": 19703209,
+            "id_str": "19703209",
+            "indices": [
+              3,
+              15
+            ]
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Mon Nov 25 05:59:48 +0000 2013",
+      "id": 4.048518959087e+17,
+      "id_str": "404851895908696064",
+      "text": "RT @danielsaidi: Just summed up Woody's talk on mob programming at #oredev http:\/\/t.co\/uilPaX0KqN",
+      "source": "<a href=\"http:\/\/twitter.com\/download\/android\" rel=\"nofollow\">Twitter for Android<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 20898877,
+        "id_str": "20898877",
+        "name": "Jon Gyllensw\u00e4rd",
+        "screen_name": "jongyllen",
+        "location": "Stockholm",
+        "description": "",
+        "url": "http:\/\/t.co\/DZ9JNzISsQ",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/DZ9JNzISsQ",
+                "expanded_url": "http:\/\/www.gyllensward.se\/blog",
+                "display_url": "gyllensward.se\/blog",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 93,
+        "friends_count": 223,
+        "listed_count": 5,
+        "created_at": "Sun Feb 15 07:43:27 +0000 2009",
+        "favourites_count": 14,
+        "utc_offset": 3600,
+        "time_zone": "Stockholm",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 864,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "131516",
+        "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme8\/bg.gif",
+        "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme8\/bg.gif",
+        "profile_background_tile": true,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/2815464865\/9914258855cd8d4deba45c9ea078bae9_normal.jpeg",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/2815464865\/9914258855cd8d4deba45c9ea078bae9_normal.jpeg",
+        "profile_link_color": "009999",
+        "profile_sidebar_border_color": "EEEEEE",
+        "profile_sidebar_fill_color": "EFEFEF",
+        "profile_text_color": "333333",
+        "profile_use_background_image": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "metadata": {
+          "result_type": "recent",
+          "iso_language_code": "en"
+        },
+        "created_at": "Fri Nov 08 15:57:01 +0000 2013",
+        "id": 3.988415977453e+17,
+        "id_str": "398841597745299458",
+        "text": "Just summed up Woody's talk on mob programming at #oredev http:\/\/t.co\/uilPaX0KqN",
+        "source": "web",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 19703209,
+          "id_str": "19703209",
+          "name": "Daniel Saidi",
+          "screen_name": "danielsaidi",
+          "location": "Stockholm, Sweden",
+          "description": "I am a system developer who lives in Stockholm Sweden, where I work at eBay \/ Tradera. I focus on web and mobility, but anything with code in it rocks my world.",
+          "url": "http:\/\/t.co\/t3cdAyodjr",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/t3cdAyodjr",
+                  "expanded_url": "http:\/\/danielsaidi.com",
+                  "display_url": "danielsaidi.com",
+                  "indices": [
+                    0,
+                    22
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": [
+                
+              ]
+            }
+          },
+          "protected": false,
+          "followers_count": 216,
+          "friends_count": 146,
+          "listed_count": 7,
+          "created_at": "Thu Jan 29 09:19:46 +0000 2009",
+          "favourites_count": 15,
+          "utc_offset": 3600,
+          "time_zone": "Stockholm",
+          "geo_enabled": false,
+          "verified": false,
+          "statuses_count": 2771,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "1A1B1F",
+          "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme9\/bg.gif",
+          "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme9\/bg.gif",
+          "profile_background_tile": false,
+          "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/2845579365\/88acee8e03376ccb868d20b18b6c6e45_normal.png",
+          "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/2845579365\/88acee8e03376ccb868d20b18b6c6e45_normal.png",
+          "profile_link_color": "2FC2EF",
+          "profile_sidebar_border_color": "181A1E",
+          "profile_sidebar_fill_color": "252429",
+          "profile_text_color": "666666",
+          "profile_use_background_image": true,
+          "default_profile": false,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "retweet_count": 5,
+        "favorite_count": 1,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "oredev",
+              "indices": [
+                50,
+                57
+              ]
+            }
+          ],
+          "symbols": [
+            
+          ],
+          "urls": [
+            {
+              "url": "http:\/\/t.co\/uilPaX0KqN",
+              "expanded_url": "http:\/\/danielsaidi.wordpress.com\/2013\/11\/08\/oredev-2013-mob-programming-a-whole-team-approach\/",
+              "display_url": "danielsaidi.wordpress.com\/2013\/11\/08\/ore\u2026",
+              "indices": [
+                58,
+                80
+              ]
+            }
+          ],
+          "user_mentions": [
+            
+          ]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "retweet_count": 5,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "oredev",
+            "indices": [
+              67,
+              74
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          {
+            "url": "http:\/\/t.co\/uilPaX0KqN",
+            "expanded_url": "http:\/\/danielsaidi.wordpress.com\/2013\/11\/08\/oredev-2013-mob-programming-a-whole-team-approach\/",
+            "display_url": "danielsaidi.wordpress.com\/2013\/11\/08\/ore\u2026",
+            "indices": [
+              75,
+              97
+            ]
+          }
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "danielsaidi",
+            "name": "Daniel Saidi",
+            "id": 19703209,
+            "id_str": "19703209",
+            "indices": [
+              3,
+              15
+            ]
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Mon Nov 25 05:57:32 +0000 2013",
+      "id": 4.0485132777306e+17,
+      "id_str": "404851327773057024",
+      "text": "I have been organizing my photos and notes from #Oredev. What a wonderful chance to relive the excitement! Non-stop excellence!",
+      "source": "web",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 94820552,
+        "id_str": "94820552",
+        "name": "Woody Zuill",
+        "screen_name": "WoodyZuill",
+        "location": "San Diego-ish",
+        "description": "Coding is good - also visit me at http:\/\/t.co\/ane2sP3gU7 . \nAnd now: International Speaker. THANK YOU OREDEV!",
+        "url": "http:\/\/t.co\/B9gAxsrn2Z",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/B9gAxsrn2Z",
+                "expanded_url": "http:\/\/bit.ly\/WoodyZuill",
+                "display_url": "bit.ly\/WoodyZuill",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/ane2sP3gU7",
+                "expanded_url": "http:\/\/www.mobprogramming.org",
+                "display_url": "mobprogramming.org",
+                "indices": [
+                  34,
+                  56
+                ]
+              }
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 1218,
+        "friends_count": 411,
+        "listed_count": 71,
+        "created_at": "Sat Dec 05 16:22:14 +0000 2009",
+        "favourites_count": 28,
+        "utc_offset": -28800,
+        "time_zone": "Pacific Time (US & Canada)",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 19174,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+        "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/2639588349\/52426385bb33154fed821960244afc76_normal.png",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/2639588349\/52426385bb33154fed821960244afc76_normal.png",
+        "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/94820552\/1375122952",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": {
+        "id": "a592bd6ceb1319f7",
+        "url": "https:\/\/api.twitter.com\/1.1\/geo\/id\/a592bd6ceb1319f7.json",
+        "place_type": "city",
+        "name": "San Diego",
+        "full_name": "San Diego, CA",
+        "country_code": "US",
+        "country": "United States",
+        "contained_within": [
+          
+        ],
+        "bounding_box": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -117.309797,
+                32.534856
+              ],
+              [
+                -116.908157,
+                32.534856
+              ],
+              [
+                -116.908157,
+                33.114407
+              ],
+              [
+                -117.309797,
+                33.114407
+              ]
+            ]
+          ]
+        },
+        "attributes": {
+          
+        }
+      },
+      "contributors": null,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "Oredev",
+            "indices": [
+              48,
+              55
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          
+        ],
+        "user_mentions": [
+          
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "lang": "en"
+    },
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Mon Nov 25 05:02:04 +0000 2013",
+      "id": 4.048373677033e+17,
+      "id_str": "404837367703298048",
+      "text": "RT @mrsungo: @WoodyZuill and a packed house for No Estimates at #oredev http:\/\/t.co\/lA0GwoeHII",
+      "source": "<a href=\"http:\/\/twitter.com\" rel=\"nofollow\">Twitter Web Client<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 94820552,
+        "id_str": "94820552",
+        "name": "Woody Zuill",
+        "screen_name": "WoodyZuill",
+        "location": "San Diego-ish",
+        "description": "Coding is good - also visit me at http:\/\/t.co\/ane2sP3gU7 . \nAnd now: International Speaker. THANK YOU OREDEV!",
+        "url": "http:\/\/t.co\/B9gAxsrn2Z",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/B9gAxsrn2Z",
+                "expanded_url": "http:\/\/bit.ly\/WoodyZuill",
+                "display_url": "bit.ly\/WoodyZuill",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/ane2sP3gU7",
+                "expanded_url": "http:\/\/www.mobprogramming.org",
+                "display_url": "mobprogramming.org",
+                "indices": [
+                  34,
+                  56
+                ]
+              }
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 1218,
+        "friends_count": 411,
+        "listed_count": 71,
+        "created_at": "Sat Dec 05 16:22:14 +0000 2009",
+        "favourites_count": 28,
+        "utc_offset": -28800,
+        "time_zone": "Pacific Time (US & Canada)",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 19174,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+        "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/2639588349\/52426385bb33154fed821960244afc76_normal.png",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/2639588349\/52426385bb33154fed821960244afc76_normal.png",
+        "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/94820552\/1375122952",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "metadata": {
+          "result_type": "recent",
+          "iso_language_code": "en"
+        },
+        "created_at": "Thu Nov 07 09:52:54 +0000 2013",
+        "id": 3.983875756036e+17,
+        "id_str": "398387575603601408",
+        "text": "@WoodyZuill and a packed house for No Estimates at #oredev http:\/\/t.co\/lA0GwoeHII",
+        "source": "<a href=\"http:\/\/twitter.com\/download\/iphone\" rel=\"nofollow\">Twitter for iPhone<\/a>",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": 94820552,
+        "in_reply_to_user_id_str": "94820552",
+        "in_reply_to_screen_name": "WoodyZuill",
+        "user": {
+          "id": 10239052,
+          "id_str": "10239052",
+          "name": "mrsungo",
+          "screen_name": "mrsungo",
+          "location": "",
+          "description": "I am a dad, husband, comic geek, mac bigot. I work at BigVisible. If I could ingest only one thing, it would be coffee.",
+          "url": "http:\/\/t.co\/tmlqr6xjJz",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/tmlqr6xjJz",
+                  "expanded_url": "http:\/\/drunkenpm.blogspot.com\/",
+                  "display_url": "drunkenpm.blogspot.com",
+                  "indices": [
+                    0,
+                    22
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": [
+                
+              ]
+            }
+          },
+          "protected": false,
+          "followers_count": 842,
+          "friends_count": 946,
+          "listed_count": 56,
+          "created_at": "Wed Nov 14 06:21:19 +0000 2007",
+          "favourites_count": 60,
+          "utc_offset": -21600,
+          "time_zone": "Central Time (US & Canada)",
+          "geo_enabled": true,
+          "verified": false,
+          "statuses_count": 2717,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "8B542B",
+          "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme8\/bg.gif",
+          "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme8\/bg.gif",
+          "profile_background_tile": false,
+          "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/424069408\/images_normal.jpeg",
+          "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/424069408\/images_normal.jpeg",
+          "profile_link_color": "9D582E",
+          "profile_sidebar_border_color": "D9B17E",
+          "profile_sidebar_fill_color": "EADEAA",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "default_profile": false,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "retweet_count": 3,
+        "favorite_count": 0,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "oredev",
+              "indices": [
+                51,
+                58
+              ]
+            }
+          ],
+          "symbols": [
+            
+          ],
+          "urls": [
+            
+          ],
+          "user_mentions": [
+            {
+              "screen_name": "WoodyZuill",
+              "name": "Woody Zuill",
+              "id": 94820552,
+              "id_str": "94820552",
+              "indices": [
+                0,
+                11
+              ]
+            }
+          ],
+          "media": [
+            {
+              "id": 3.9838757545261e+17,
+              "id_str": "398387575452614656",
+              "indices": [
+                59,
+                81
+              ],
+              "media_url": "http:\/\/pbs.twimg.com\/media\/BYdbY53IQAA8zv_.jpg",
+              "media_url_https": "https:\/\/pbs.twimg.com\/media\/BYdbY53IQAA8zv_.jpg",
+              "url": "http:\/\/t.co\/lA0GwoeHII",
+              "display_url": "pic.twitter.com\/lA0GwoeHII",
+              "expanded_url": "http:\/\/twitter.com\/mrsungo\/status\/398387575603601408\/photo\/1",
+              "type": "photo",
+              "sizes": {
+                "medium": {
+                  "w": 600,
+                  "h": 450,
+                  "resize": "fit"
+                },
+                "large": {
+                  "w": 1024,
+                  "h": 768,
+                  "resize": "fit"
+                },
+                "thumb": {
+                  "w": 150,
+                  "h": 150,
+                  "resize": "crop"
+                },
+                "small": {
+                  "w": 340,
+                  "h": 255,
+                  "resize": "fit"
+                }
+              }
+            }
+          ]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "retweet_count": 3,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "oredev",
+            "indices": [
+              64,
+              71
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "mrsungo",
+            "name": "mrsungo",
+            "id": 10239052,
+            "id_str": "10239052",
+            "indices": [
+              3,
+              11
+            ]
+          },
+          {
+            "screen_name": "WoodyZuill",
+            "name": "Woody Zuill",
+            "id": 94820552,
+            "id_str": "94820552",
+            "indices": [
+              13,
+              24
+            ]
+          }
+        ],
+        "media": [
+          {
+            "id": 3.9838757545261e+17,
+            "id_str": "398387575452614656",
+            "indices": [
+              72,
+              94
+            ],
+            "media_url": "http:\/\/pbs.twimg.com\/media\/BYdbY53IQAA8zv_.jpg",
+            "media_url_https": "https:\/\/pbs.twimg.com\/media\/BYdbY53IQAA8zv_.jpg",
+            "url": "http:\/\/t.co\/lA0GwoeHII",
+            "display_url": "pic.twitter.com\/lA0GwoeHII",
+            "expanded_url": "http:\/\/twitter.com\/mrsungo\/status\/398387575603601408\/photo\/1",
+            "type": "photo",
+            "sizes": {
+              "medium": {
+                "w": 600,
+                "h": 450,
+                "resize": "fit"
+              },
+              "large": {
+                "w": 1024,
+                "h": 768,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "small": {
+                "w": 340,
+                "h": 255,
+                "resize": "fit"
+              }
+            },
+            "source_status_id": 3.983875756036e+17,
+            "source_status_id_str": "398387575603601408"
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Mon Nov 25 04:44:13 +0000 2013",
+      "id": 4.0483287653485e+17,
+      "id_str": "404832876534845440",
+      "text": "RT @danielsaidi: Just summed up Woody's talk on mob programming at #oredev http:\/\/t.co\/uilPaX0KqN",
+      "source": "<a href=\"http:\/\/twitter.com\" rel=\"nofollow\">Twitter Web Client<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 94820552,
+        "id_str": "94820552",
+        "name": "Woody Zuill",
+        "screen_name": "WoodyZuill",
+        "location": "San Diego-ish",
+        "description": "Coding is good - also visit me at http:\/\/t.co\/ane2sP3gU7 . \nAnd now: International Speaker. THANK YOU OREDEV!",
+        "url": "http:\/\/t.co\/B9gAxsrn2Z",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/B9gAxsrn2Z",
+                "expanded_url": "http:\/\/bit.ly\/WoodyZuill",
+                "display_url": "bit.ly\/WoodyZuill",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/ane2sP3gU7",
+                "expanded_url": "http:\/\/www.mobprogramming.org",
+                "display_url": "mobprogramming.org",
+                "indices": [
+                  34,
+                  56
+                ]
+              }
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 1218,
+        "friends_count": 411,
+        "listed_count": 71,
+        "created_at": "Sat Dec 05 16:22:14 +0000 2009",
+        "favourites_count": 28,
+        "utc_offset": -28800,
+        "time_zone": "Pacific Time (US & Canada)",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 19174,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+        "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/2639588349\/52426385bb33154fed821960244afc76_normal.png",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/2639588349\/52426385bb33154fed821960244afc76_normal.png",
+        "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/94820552\/1375122952",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "metadata": {
+          "result_type": "recent",
+          "iso_language_code": "en"
+        },
+        "created_at": "Fri Nov 08 15:57:01 +0000 2013",
+        "id": 3.988415977453e+17,
+        "id_str": "398841597745299458",
+        "text": "Just summed up Woody's talk on mob programming at #oredev http:\/\/t.co\/uilPaX0KqN",
+        "source": "web",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 19703209,
+          "id_str": "19703209",
+          "name": "Daniel Saidi",
+          "screen_name": "danielsaidi",
+          "location": "Stockholm, Sweden",
+          "description": "I am a system developer who lives in Stockholm Sweden, where I work at eBay \/ Tradera. I focus on web and mobility, but anything with code in it rocks my world.",
+          "url": "http:\/\/t.co\/t3cdAyodjr",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/t3cdAyodjr",
+                  "expanded_url": "http:\/\/danielsaidi.com",
+                  "display_url": "danielsaidi.com",
+                  "indices": [
+                    0,
+                    22
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": [
+                
+              ]
+            }
+          },
+          "protected": false,
+          "followers_count": 216,
+          "friends_count": 146,
+          "listed_count": 7,
+          "created_at": "Thu Jan 29 09:19:46 +0000 2009",
+          "favourites_count": 15,
+          "utc_offset": 3600,
+          "time_zone": "Stockholm",
+          "geo_enabled": false,
+          "verified": false,
+          "statuses_count": 2771,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "1A1B1F",
+          "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme9\/bg.gif",
+          "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme9\/bg.gif",
+          "profile_background_tile": false,
+          "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/2845579365\/88acee8e03376ccb868d20b18b6c6e45_normal.png",
+          "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/2845579365\/88acee8e03376ccb868d20b18b6c6e45_normal.png",
+          "profile_link_color": "2FC2EF",
+          "profile_sidebar_border_color": "181A1E",
+          "profile_sidebar_fill_color": "252429",
+          "profile_text_color": "666666",
+          "profile_use_background_image": true,
+          "default_profile": false,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "retweet_count": 5,
+        "favorite_count": 1,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "oredev",
+              "indices": [
+                50,
+                57
+              ]
+            }
+          ],
+          "symbols": [
+            
+          ],
+          "urls": [
+            {
+              "url": "http:\/\/t.co\/uilPaX0KqN",
+              "expanded_url": "http:\/\/danielsaidi.wordpress.com\/2013\/11\/08\/oredev-2013-mob-programming-a-whole-team-approach\/",
+              "display_url": "danielsaidi.wordpress.com\/2013\/11\/08\/ore\u2026",
+              "indices": [
+                58,
+                80
+              ]
+            }
+          ],
+          "user_mentions": [
+            
+          ]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "retweet_count": 5,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "oredev",
+            "indices": [
+              67,
+              74
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          {
+            "url": "http:\/\/t.co\/uilPaX0KqN",
+            "expanded_url": "http:\/\/danielsaidi.wordpress.com\/2013\/11\/08\/oredev-2013-mob-programming-a-whole-team-approach\/",
+            "display_url": "danielsaidi.wordpress.com\/2013\/11\/08\/ore\u2026",
+            "indices": [
+              75,
+              97
+            ]
+          }
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "danielsaidi",
+            "name": "Daniel Saidi",
+            "id": 19703209,
+            "id_str": "19703209",
+            "indices": [
+              3,
+              15
+            ]
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Sun Nov 24 19:11:05 +0000 2013",
+      "id": 4.0468864048982e+17,
+      "id_str": "404688640489816065",
+      "text": "RT @WoodyZuill: Someone pointed me to the #Oredev recording of my Mob Programming talk. Already up on Vimeo! Wow that is FAST: http:\/\/t.co\/\u2026",
+      "source": "<a href=\"http:\/\/bufferapp.com\" rel=\"nofollow\">Buffer<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 21487243,
+        "id_str": "21487243",
+        "name": "Industrial Logic",
+        "screen_name": "IndustrialLogic",
+        "location": "Berkeley, CA",
+        "description": "Pioneers and practitioners of #TechSafety. Blogging at http:\/\/t.co\/WvZ3DDdXze",
+        "url": "http:\/\/t.co\/P4KI8qn5Cl",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/P4KI8qn5Cl",
+                "expanded_url": "http:\/\/industriallogic.com",
+                "display_url": "industriallogic.com",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/WvZ3DDdXze",
+                "expanded_url": "http:\/\/www.industriallogic.com\/blog\/",
+                "display_url": "industriallogic.com\/blog\/",
+                "indices": [
+                  55,
+                  77
+                ]
+              }
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 818,
+        "friends_count": 1472,
+        "listed_count": 57,
+        "created_at": "Sat Feb 21 14:19:38 +0000 2009",
+        "favourites_count": 1,
+        "utc_offset": -28800,
+        "time_zone": "Pacific Time (US & Canada)",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 392,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "9AE4E8",
+        "profile_background_image_url": "http:\/\/a0.twimg.com\/profile_background_images\/5144745\/big4.gif",
+        "profile_background_image_url_https": "https:\/\/si0.twimg.com\/profile_background_images\/5144745\/big4.gif",
+        "profile_background_tile": true,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/858274133\/IL_Shape_Only_sm_normal.png",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/858274133\/IL_Shape_Only_sm_normal.png",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "BDDCAD",
+        "profile_sidebar_fill_color": "FFFFFF",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "metadata": {
+          "result_type": "recent",
+          "iso_language_code": "en"
+        },
+        "created_at": "Fri Nov 08 00:43:19 +0000 2013",
+        "id": 3.9861165838736e+17,
+        "id_str": "398611658387357697",
+        "text": "Someone pointed me to the #Oredev recording of my Mob Programming talk. Already up on Vimeo! Wow that is FAST: http:\/\/t.co\/Tt0aary0Q3",
+        "source": "web",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 94820552,
+          "id_str": "94820552",
+          "name": "Woody Zuill",
+          "screen_name": "WoodyZuill",
+          "location": "San Diego-ish",
+          "description": "Coding is good - also visit me at http:\/\/t.co\/ane2sP3gU7 . \nAnd now: International Speaker. THANK YOU OREDEV!",
+          "url": "http:\/\/t.co\/B9gAxsrn2Z",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/B9gAxsrn2Z",
+                  "expanded_url": "http:\/\/bit.ly\/WoodyZuill",
+                  "display_url": "bit.ly\/WoodyZuill",
+                  "indices": [
+                    0,
+                    22
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/ane2sP3gU7",
+                  "expanded_url": "http:\/\/www.mobprogramming.org",
+                  "display_url": "mobprogramming.org",
+                  "indices": [
+                    34,
+                    56
+                  ]
+                }
+              ]
+            }
+          },
+          "protected": false,
+          "followers_count": 1218,
+          "friends_count": 411,
+          "listed_count": 71,
+          "created_at": "Sat Dec 05 16:22:14 +0000 2009",
+          "favourites_count": 28,
+          "utc_offset": -28800,
+          "time_zone": "Pacific Time (US & Canada)",
+          "geo_enabled": true,
+          "verified": false,
+          "statuses_count": 19174,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "C0DEED",
+          "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+          "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+          "profile_background_tile": false,
+          "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/2639588349\/52426385bb33154fed821960244afc76_normal.png",
+          "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/2639588349\/52426385bb33154fed821960244afc76_normal.png",
+          "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/94820552\/1375122952",
+          "profile_link_color": "0084B4",
+          "profile_sidebar_border_color": "C0DEED",
+          "profile_sidebar_fill_color": "DDEEF6",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "default_profile": true,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "retweet_count": 9,
+        "favorite_count": 8,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "Oredev",
+              "indices": [
+                26,
+                33
+              ]
+            }
+          ],
+          "symbols": [
+            
+          ],
+          "urls": [
+            {
+              "url": "http:\/\/t.co\/Tt0aary0Q3",
+              "expanded_url": "http:\/\/vimeo.com\/user4280938",
+              "display_url": "vimeo.com\/user4280938",
+              "indices": [
+                111,
+                133
+              ]
+            }
+          ],
+          "user_mentions": [
+            
+          ]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "retweet_count": 9,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "Oredev",
+            "indices": [
+              42,
+              49
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "WoodyZuill",
+            "name": "Woody Zuill",
+            "id": 94820552,
+            "id_str": "94820552",
+            "indices": [
+              3,
+              14
+            ]
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "lang": "en"
+    },
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Sun Nov 24 15:04:11 +0000 2013",
+      "id": 4.0462650614169e+17,
+      "id_str": "404626506141691905",
+      "text": "RT @WoodyZuill: #oredev attendees: BIG favor to ask. If you have a photo of me speaking where I look even halfway professional please post \u2026",
+      "source": "<a href=\"http:\/\/bufferapp.com\" rel=\"nofollow\">Buffer<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 23513,
+        "id_str": "23513",
+        "name": "Adrian Howard",
+        "screen_name": "adrianh",
+        "location": "Dorset, UK",
+        "description": "Passionate about building effective teams and great products. Quietstars co-founder. Lean Startup lover. Agile & Lean UX fanatic. 50% development & 50% design.",
+        "url": "http:\/\/t.co\/Wz0jxqobws",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/Wz0jxqobws",
+                "expanded_url": "http:\/\/quietstars.com",
+                "display_url": "quietstars.com",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 3646,
+        "friends_count": 2634,
+        "listed_count": 300,
+        "created_at": "Sun Nov 26 21:00:57 +0000 2006",
+        "favourites_count": 815,
+        "utc_offset": 0,
+        "time_zone": "London",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 19306,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "9AE4E8",
+        "profile_background_image_url": "http:\/\/a0.twimg.com\/profile_background_images\/2551906\/PICT0038-small.jpg",
+        "profile_background_image_url_https": "https:\/\/si0.twimg.com\/profile_background_images\/2551906\/PICT0038-small.jpg",
+        "profile_background_tile": false,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/299092306\/adrian-smiling_normal.jpg",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/299092306\/adrian-smiling_normal.jpg",
+        "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/23513\/1348253447",
+        "profile_link_color": "0000FF",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "BEE3FE",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "metadata": {
+          "result_type": "recent",
+          "iso_language_code": "en"
+        },
+        "created_at": "Wed Nov 13 05:45:46 +0000 2013",
+        "id": 4.0049971172907e+17,
+        "id_str": "400499711729074176",
+        "text": "#oredev attendees: BIG favor to ask. If you have a photo of me speaking where I look even halfway professional please post them to me.",
+        "source": "<a href=\"http:\/\/twitter.com\/download\/iphone\" rel=\"nofollow\">Twitter for iPhone<\/a>",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 94820552,
+          "id_str": "94820552",
+          "name": "Woody Zuill",
+          "screen_name": "WoodyZuill",
+          "location": "San Diego-ish",
+          "description": "Coding is good - also visit me at http:\/\/t.co\/ane2sP3gU7 . \nAnd now: International Speaker. THANK YOU OREDEV!",
+          "url": "http:\/\/t.co\/B9gAxsrn2Z",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/B9gAxsrn2Z",
+                  "expanded_url": "http:\/\/bit.ly\/WoodyZuill",
+                  "display_url": "bit.ly\/WoodyZuill",
+                  "indices": [
+                    0,
+                    22
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/ane2sP3gU7",
+                  "expanded_url": "http:\/\/www.mobprogramming.org",
+                  "display_url": "mobprogramming.org",
+                  "indices": [
+                    34,
+                    56
+                  ]
+                }
+              ]
+            }
+          },
+          "protected": false,
+          "followers_count": 1218,
+          "friends_count": 411,
+          "listed_count": 71,
+          "created_at": "Sat Dec 05 16:22:14 +0000 2009",
+          "favourites_count": 28,
+          "utc_offset": -28800,
+          "time_zone": "Pacific Time (US & Canada)",
+          "geo_enabled": true,
+          "verified": false,
+          "statuses_count": 19174,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "C0DEED",
+          "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+          "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+          "profile_background_tile": false,
+          "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/2639588349\/52426385bb33154fed821960244afc76_normal.png",
+          "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/2639588349\/52426385bb33154fed821960244afc76_normal.png",
+          "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/94820552\/1375122952",
+          "profile_link_color": "0084B4",
+          "profile_sidebar_border_color": "C0DEED",
+          "profile_sidebar_fill_color": "DDEEF6",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "default_profile": true,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "retweet_count": 5,
+        "favorite_count": 1,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "oredev",
+              "indices": [
+                0,
+                7
+              ]
+            }
+          ],
+          "symbols": [
+            
+          ],
+          "urls": [
+            
+          ],
+          "user_mentions": [
+            
+          ]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "lang": "en"
+      },
+      "retweet_count": 5,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "oredev",
+            "indices": [
+              16,
+              23
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "WoodyZuill",
+            "name": "Woody Zuill",
+            "id": 94820552,
+            "id_str": "94820552",
+            "indices": [
+              3,
+              14
+            ]
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "lang": "en"
+    },
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Sat Nov 23 12:43:57 +0000 2013",
+      "id": 4.0422882770839e+17,
+      "id_str": "404228827708391424",
+      "text": "RT @searls: Seeing Randall Munroe (@xkcd) speak at #oredev was a delight. Watch his talk here: http:\/\/t.co\/IQGPstcVxR",
+      "source": "<a href=\"http:\/\/twitter.com\/download\/iphone\" rel=\"nofollow\">Twitter for iPhone<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 74413825,
+        "id_str": "74413825",
+        "name": "Marie Friberger",
+        "screen_name": "mariegus",
+        "location": "Malm\u00f6, Sweden",
+        "description": "Computer science researcher and teacher at Malm\u00f6 University. Open data, linked data, data games.",
+        "url": "http:\/\/t.co\/7L4MdQIHEJ",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/7L4MdQIHEJ",
+                "expanded_url": "http:\/\/forskning.mah.se\/en\/id\/ctmagu",
+                "display_url": "forskning.mah.se\/en\/id\/ctmagu",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 383,
+        "friends_count": 656,
+        "listed_count": 17,
+        "created_at": "Tue Sep 15 10:14:14 +0000 2009",
+        "favourites_count": 122,
+        "utc_offset": 3600,
+        "time_zone": "Stockholm",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 914,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "B2DFDA",
+        "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme13\/bg.gif",
+        "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme13\/bg.gif",
+        "profile_background_tile": false,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/2125762995\/Marie_Gustafsson_Friberger_normal.jpg",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/2125762995\/Marie_Gustafsson_Friberger_normal.jpg",
+        "profile_link_color": "93A644",
+        "profile_sidebar_border_color": "EEEEEE",
+        "profile_sidebar_fill_color": "FFFFFF",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "metadata": {
+          "result_type": "recent",
+          "iso_language_code": "en"
+        },
+        "created_at": "Fri Nov 08 14:30:19 +0000 2013",
+        "id": 3.9881977918181e+17,
+        "id_str": "398819779181805568",
+        "text": "Seeing Randall Munroe (@xkcd) speak at #oredev was a delight. Watch his talk here: http:\/\/t.co\/IQGPstcVxR",
+        "source": "<a href=\"http:\/\/tapbots.com\/tweetbot\" rel=\"nofollow\">Tweetbot for iOS<\/a>",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 9038902,
+          "id_str": "9038902",
+          "name": "Justin Searls",
+          "screen_name": "searls",
+          "location": "Columbus, OH",
+          "description": "Maintaining a healthy disrespect for the status quo since first learning what status quo meant \n\nI build apps at @testdouble, and talk about it as @searlsware.",
+          "url": "http:\/\/t.co\/HjlPQb3qF5",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/HjlPQb3qF5",
+                  "expanded_url": "http:\/\/about.me\/searls",
+                  "display_url": "about.me\/searls",
+                  "indices": [
+                    0,
+                    22
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": [
+                
+              ]
+            }
+          },
+          "protected": false,
+          "followers_count": 2104,
+          "friends_count": 668,
+          "listed_count": 115,
+          "created_at": "Sat Sep 22 21:51:58 +0000 2007",
+          "favourites_count": 1793,
+          "utc_offset": -18000,
+          "time_zone": "Eastern Time (US & Canada)",
+          "geo_enabled": false,
+          "verified": false,
+          "statuses_count": 18086,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "FFFFFF",
+          "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+          "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+          "profile_background_tile": false,
+          "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/2360535353\/20120630-face_normal.jpg",
+          "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/2360535353\/20120630-face_normal.jpg",
+          "profile_link_color": "3E55E5",
+          "profile_sidebar_border_color": "ABABAB",
+          "profile_sidebar_fill_color": "CCCCCC",
+          "profile_text_color": "000000",
+          "profile_use_background_image": false,
+          "default_profile": false,
+          "default_profile_image": false,
+          "following": true,
+          "follow_request_sent": false,
+          "notifications": false
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "retweet_count": 11,
+        "favorite_count": 18,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "oredev",
+              "indices": [
+                39,
+                46
+              ]
+            }
+          ],
+          "symbols": [
+            
+          ],
+          "urls": [
+            {
+              "url": "http:\/\/t.co\/IQGPstcVxR",
+              "expanded_url": "http:\/\/vimeo.com\/78912850",
+              "display_url": "vimeo.com\/78912850",
+              "indices": [
+                83,
+                105
+              ]
+            }
+          ],
+          "user_mentions": [
+            {
+              "screen_name": "xkcd",
+              "name": "Randall Munroe",
+              "id": 21146468,
+              "id_str": "21146468",
+              "indices": [
+                23,
+                28
+              ]
+            }
+          ]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "retweet_count": 11,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "oredev",
+            "indices": [
+              51,
+              58
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          {
+            "url": "http:\/\/t.co\/IQGPstcVxR",
+            "expanded_url": "http:\/\/vimeo.com\/78912850",
+            "display_url": "vimeo.com\/78912850",
+            "indices": [
+              95,
+              117
+            ]
+          }
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "searls",
+            "name": "Justin Searls",
+            "id": 9038902,
+            "id_str": "9038902",
+            "indices": [
+              3,
+              10
+            ]
+          },
+          {
+            "screen_name": "xkcd",
+            "name": "Randall Munroe",
+            "id": 21146468,
+            "id_str": "21146468",
+            "indices": [
+              35,
+              40
+            ]
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Fri Nov 22 23:38:59 +0000 2013",
+      "id": 4.0403128349321e+17,
+      "id_str": "404031283493212160",
+      "text": "RT @jessitron: My favorite talk from #oredev - embrace simplicity, accept complexity with Microservices by @fgeorge52 http:\/\/t.co\/ROpy0Jv0tM",
+      "source": "<a href=\"http:\/\/tapbots.com\/tweetbot\" rel=\"nofollow\">Tweetbot for iOS<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 21910618,
+        "id_str": "21910618",
+        "name": "Dan Lien",
+        "screen_name": "danclien",
+        "location": "Austin, TX",
+        "description": "Learning code, architecture, UX, and project management. Beginner functional programmer and bicycle commuter.",
+        "url": "http:\/\/t.co\/aDFyUD7Eas",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http:\/\/t.co\/aDFyUD7Eas",
+                "expanded_url": "http:\/\/danclien.com",
+                "display_url": "danclien.com",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 442,
+        "friends_count": 505,
+        "listed_count": 29,
+        "created_at": "Wed Feb 25 20:02:18 +0000 2009",
+        "favourites_count": 134,
+        "utc_offset": -21600,
+        "time_zone": "Central Time (US & Canada)",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 5622,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "334775",
+        "profile_background_image_url": "http:\/\/a0.twimg.com\/profile_background_images\/4870900\/floral.png",
+        "profile_background_image_url_https": "https:\/\/si0.twimg.com\/profile_background_images\/4870900\/floral.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/83460558\/me_normal.jpg",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/83460558\/me_normal.jpg",
+        "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/21910618\/1366496113",
+        "profile_link_color": "CD961D",
+        "profile_sidebar_border_color": "FCB141",
+        "profile_sidebar_fill_color": "F2EAD4",
+        "profile_text_color": "2B2B2B",
+        "profile_use_background_image": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "metadata": {
+          "result_type": "recent",
+          "iso_language_code": "en"
+        },
+        "created_at": "Fri Nov 22 20:41:56 +0000 2013",
+        "id": 4.0398672785902e+17,
+        "id_str": "403986727859019776",
+        "text": "My favorite talk from #oredev - embrace simplicity, accept complexity with Microservices by @fgeorge52 http:\/\/t.co\/ROpy0Jv0tM",
+        "source": "web",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 25103,
+          "id_str": "25103",
+          "name": "Jessica Kerr",
+          "screen_name": "jessitron",
+          "location": "St. Louis, MO",
+          "description": "Scala developer, speaker, mother, crazy nut. Always learning and growing. Tweets about software, philosophy, and philosophy of software.",
+          "url": "http:\/\/t.co\/1SmKf3NbpS",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/1SmKf3NbpS",
+                  "expanded_url": "http:\/\/blog.jessitron.com",
+                  "display_url": "blog.jessitron.com",
+                  "indices": [
+                    0,
+                    22
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": [
+                
+              ]
+            }
+          },
+          "protected": false,
+          "followers_count": 4228,
+          "friends_count": 760,
+          "listed_count": 203,
+          "created_at": "Mon Nov 27 15:57:55 +0000 2006",
+          "favourites_count": 990,
+          "utc_offset": -21600,
+          "time_zone": "Central Time (US & Canada)",
+          "geo_enabled": false,
+          "verified": false,
+          "statuses_count": 6070,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "000000",
+          "profile_background_image_url": "http:\/\/a0.twimg.com\/profile_background_images\/615435824\/06h1gku5p7s10tl9res2.png",
+          "profile_background_image_url_https": "https:\/\/si0.twimg.com\/profile_background_images\/615435824\/06h1gku5p7s10tl9res2.png",
+          "profile_background_tile": true,
+          "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/3720484184\/649f0d6318c36a22bb7ba7998e92dece_normal.jpeg",
+          "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/3720484184\/649f0d6318c36a22bb7ba7998e92dece_normal.jpeg",
+          "profile_link_color": "0000FF",
+          "profile_sidebar_border_color": "87BC44",
+          "profile_sidebar_fill_color": "E0FF92",
+          "profile_text_color": "000000",
+          "profile_use_background_image": true,
+          "default_profile": false,
+          "default_profile_image": false,
+          "following": false,
+          "follow_request_sent": false,
+          "notifications": false
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "retweet_count": 3,
+        "favorite_count": 14,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "oredev",
+              "indices": [
+                22,
+                29
+              ]
+            }
+          ],
+          "symbols": [
+            
+          ],
+          "urls": [
+            {
+              "url": "http:\/\/t.co\/ROpy0Jv0tM",
+              "expanded_url": "http:\/\/vimeo.com\/79866979",
+              "display_url": "vimeo.com\/79866979",
+              "indices": [
+                103,
+                125
+              ]
+            }
+          ],
+          "user_mentions": [
+            {
+              "screen_name": "fgeorge52",
+              "name": "Fred George",
+              "id": 52384313,
+              "id_str": "52384313",
+              "indices": [
+                92,
+                102
+              ]
+            }
+          ]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "retweet_count": 3,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "oredev",
+            "indices": [
+              37,
+              44
+            ]
+          }
+        ],
+        "symbols": [
+          
+        ],
+        "urls": [
+          {
+            "url": "http:\/\/t.co\/ROpy0Jv0tM",
+            "expanded_url": "http:\/\/vimeo.com\/79866979",
+            "display_url": "vimeo.com\/79866979",
+            "indices": [
+              118,
+              140
+            ]
+          }
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "jessitron",
+            "name": "Jessica Kerr",
+            "id": 25103,
+            "id_str": "25103",
+            "indices": [
+              3,
+              13
+            ]
+          },
+          {
+            "screen_name": "fgeorge52",
+            "name": "Fred George",
+            "id": 52384313,
+            "id_str": "52384313",
+            "indices": [
+              107,
+              117
+            ]
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    }
+  ],
+  "search_metadata": {
+    "completed_in": 0.036,
+    "max_id": 4.0502445966637e+17,
+    "max_id_str": "405024459666374656",
+    "next_results": "?max_id=404031283493212159&q=%23oredev&include_entities=1&result_type=recent",
+    "query": "%23oredev",
+    "refresh_url": "?since_id=405024459666374656&q=%23oredev&result_type=recent&include_entities=1",
+    "count": 15,
+    "since_id": 0,
+    "since_id_str": "0"
+  }
+}

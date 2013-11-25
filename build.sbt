@@ -10,3 +10,7 @@ libraryDependencies += "org.scalaz.stream" %% "scalaz-stream" % "0.3-SNAPSHOT"
 
 libraryDependencies += "org.scalacheck" %% "scalacheck" % "1.11.0" % "test"
 
+resolvers += "spray" at "http://repo.spray.io/"
+
+libraryDependencies += "io.spray" %%  "spray-json" % "1.2.5"
+
