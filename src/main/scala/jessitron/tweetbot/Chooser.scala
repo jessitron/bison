@@ -11,6 +11,8 @@ case class IncomingTweet(tweet: TweetDetail,
 case class TweetThis(tweet: TweetDetail,
                      inReplyTo: Option[IncomingTweet] = None) extends Message
 
+case class RespondTo(tweet:IncomingTweet) extends Message
+
 case class Opinion(points: Score)
 case class TweetDetail(text: TweetContents)
 
@@ -36,8 +38,8 @@ object Chooser {
     go(new TweetPool(poolSize))
   }
 
-  private def respondTo(incoming: IncomingTweet) : TweetThis =
-    TweetThis(incoming.tweet, Some(incoming))
+  private def respondTo(incoming: IncomingTweet) : RespondTo =
+    RespondTo(incoming)
 
   class TweetPool(size: Int, contents: Seq[IncomingTweet] = Vector()) {
     // There is probably a more efficient datastructure to use here. While poolSize is tiny it doesn't matter.

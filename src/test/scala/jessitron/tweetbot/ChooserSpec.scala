@@ -34,7 +34,7 @@ object ChooserSpec extends Properties("Chooser") {
 
       val subject = Chooser.tweetPicker(poolSize)
       val output = (source |> subject).runLog.run
-      val results = output.toList groupBy { case i: TweetThis => "tweet"
+      val results = output.toList groupBy { case i: RespondTo => "tweet"
                                             case t@ TimeToTweet => "trigger"
                                             case _ => "other" }
 
@@ -42,7 +42,7 @@ object ChooserSpec extends Properties("Chooser") {
       val expectedTweetOrder = incomingTweets sortBy {_.totalScore * -1 } take expectedTweetQty
       val expectedTriggers = (triggerCount - expectedTweetQty) max 0
 
-      val receivedTweets = results.getOrElse("tweet", Seq()).map{_.asInstanceOf[TweetThis].inReplyTo.get}
+      val receivedTweets = results.getOrElse("tweet", Seq()).map{_.asInstanceOf[RespondTo].tweet}
       val receivedTriggers = results.getOrElse("trigger", Seq())
 
       (receivedTweets.size ?= expectedTweetQty)   :| "as many tweets as received, stored, and triggered are output" &&
