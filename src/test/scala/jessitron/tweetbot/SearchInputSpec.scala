@@ -13,12 +13,10 @@ object SearchInputSpec extends Properties("SearchInput") {
   property("can deserialize json into incoming tweets") =
     {
       val inputFile = getClass.getClassLoader().getResourceAsStream(testInputFile)
-      val bytesToString = process1.lift{ab: Array[Byte] => ab.map{_.toChar}.mkString}
-      import scalaz._
-      import scalaz.std.AllInstances._
-      val source = ((Process(10000).toSource.repeat) through io.chunkR(inputFile))
 
-      val process = (source |> bytesToString).foldMonoid |> SearchInput.jsonToTweets
+      val json = SearchInput.streamToJson(inputFile)
+
+      val process = json |> SearchInput.jsonToTweets
       val output = process.runLog.run
 
       (output.size == 15) :| "There are 15 tweets in that file" &&

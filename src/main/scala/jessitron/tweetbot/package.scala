@@ -3,6 +3,7 @@ package jessitron
 package object tweetbot {
   type Score = Double
   type TweetContents = String
+  type SuggestedText = Option[String]
 
   sealed trait Message
   case object TimeToTweet extends Message
@@ -31,6 +32,8 @@ package object tweetbot {
 
   case class RespondTo(tweet:IncomingTweet) extends Message
 
-  case class Opinion(points: Score)
+  case class Opinion(points: Score, suggestedText: SuggestedText) {
+    def hasSuggestion: Boolean = suggestedText.nonEmpty
+  }
   case class TweetDetail(text: TweetContents)
 }

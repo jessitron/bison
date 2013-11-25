@@ -8,22 +8,7 @@ import Prop._
 
 object ChooserSpec extends Properties("Chooser") {
 
-  val smallInt = choose(1, 7)
-  def alphaStr(n: Int): Gen[String] = listOfN(n, alphaChar) map {_.mkString}
-  val tweetDetail: Gen[TweetDetail] = for {
-    l <- choose(1, 140)
-    str <- alphaStr(l)
-  } yield TweetDetail(str)
-
-  val incomingTweet: Gen[IncomingTweet] = for {
-    score <- choose(-100, 100) map {_.toDouble / 100}
-    tweet <- tweetDetail
-  } yield IncomingTweet(tweet, Seq(Opinion(score)))
-
-  val someIncomingTweets: Gen[List[IncomingTweet]] = for {
-    n <- smallInt
-    list <- listOfN(n, incomingTweet)
-  } yield list
+  import Common._
 
   property("Gives back saved tweets") = forAll(smallInt, someIncomingTweets, smallInt) {
     (poolSize: Int, incomingTweets: List[IncomingTweet], triggerCount: Int) =>
