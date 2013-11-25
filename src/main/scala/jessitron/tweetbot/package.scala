@@ -11,6 +11,7 @@ package object tweetbot {
   case class IncomingTweet(tweet: TweetDetail,
                            opinions: Seq[Opinion] = Seq()) extends Message {
      def totalScore = opinions map {_.points} sum
+     def addMyTwoCents(o: Opinion) = copy(opinions = o +: opinions)
   }
   object IncomingTweet {
     import spray.json._
