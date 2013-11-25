@@ -12,23 +12,17 @@ object SearchInputSpec extends Properties("SearchInput") {
   // this is a single example.
   property("can deserialize json into incoming tweets") =
     {
-      import java.util.Date
-      println(s"Starting ${new Date}")
-      val inputFile = this.getClass.getClassLoader().getResourceAsStream(testInputFile)
+      val inputFile = getClass.getClassLoader().getResourceAsStream(testInputFile)
+      val bytesToString = process1.lift{ab: Array[Byte] => ab.map{_.toChar}.mkString}
       import scalaz._
       import scalaz.std.AllInstances._
       val source = ((Process(10000).toSource.repeat) through io.chunkR(inputFile))
 
-      val bytesToString = process1.lift{ab: Array[Byte] => ab.map{_.toChar}.mkString}
-
       val process = (source |> bytesToString).foldMonoid |> SearchInput.jsonToTweets
-
-      println(s"Running ${new Date}")
       val output = process.runLog.run
-      println(s"Doning ${new Date}")
 
-      println(output)
-      true
+      (output.size == 15) :| "There are 15 tweets in that file" &&
+      output.head.tweet.text.contains("Check out the video from my #oredev talk")
     }
 
 

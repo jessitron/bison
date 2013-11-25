@@ -18,11 +18,11 @@ package object tweetbot {
     implicit val deserializer: JsonFormat[IncomingTweet] =
       new JsonFormat[IncomingTweet] {
         def read(js: JsValue) = {
-          IncomingTweet(TweetDetail("Yoo hoo"))
+          val jso = js.asJsObject
+          val text = jso.fields("text").toString
+          IncomingTweet(TweetDetail(text))
         }
-        def write(i: IncomingTweet): JsValue = {
-          Map("text" -> i.tweet.text).toJson
-        }
+        def write(i: IncomingTweet): JsValue = ???
       }
   }
 
