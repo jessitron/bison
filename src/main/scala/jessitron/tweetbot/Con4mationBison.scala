@@ -9,12 +9,14 @@
 
    def agree(source: Process[Task, String],
              sink: Sink[Task, Message],
-             maxTweets: Int): Process[Task, Unit] = {
+             maxTweets: Int,
+             tweetFrequency: Duration = 10 seconds): Process[Task, Unit] = {
 
        val incomingTweets = source |>
                             SearchInput.jsonToTweets
-       val rankedTweets = incomingTweets |> Rankers.randomo
-       val triggers = Process.awakeEvery(500 millis) map
+       val slowIncomingTweets = Process.every(1 second).tee(incomingTweets)(tee.when)
+       val rankedTweets = slowIncomingTweets |> Rankers.randomo
+       val triggers = Process.awakeEvery(tweetFrequency) map
                       {_ => TimeToTweet} take maxTweets
 
        val intersperse: Process1[Message \/ Message, Message] = process1.lift {

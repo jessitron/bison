@@ -10,6 +10,11 @@ object Common {
   val smallInt = choose(1, 7)
   def alphaStr(n: Int): Gen[String] = listOfN(n, alphaChar) map {_.mkString}
 
+  def smallNumberOf[A](g: Gen[A]): Gen[List[A]] = for {
+    n <- smallInt
+    list <- listOfN(n, g)
+  } yield list
+
   val tweetText: Gen[String] = for {
     l <- choose(1, 120)
     str <- alphaStr(l)
@@ -39,4 +44,17 @@ object Common {
     n <- smallInt
     list <- listOfN(n, incomingTweet)
   } yield (list map { RespondTo(_) })
+
+  val tweetThis: Gen[TweetThis] = for {
+    tweet <- tweetDetail
+    inResponse <- frequency((9, incomingTweet map {Some(_)}),(1, None))
+  } yield TweetThis(tweet, inResponse)
+
+  val tweeted: Gen[Tweeted] = tweetThis map {Tweeted(_)}
+
+  val randomMessage: Gen[Message] = frequency((10, tweetThis),
+                                              (10, tweeted),
+                                              (1, value(TimeToTweet)))
+
+  val assortedMessages: Gen[List[Message]] = smallNumberOf(randomMessage)
 }
