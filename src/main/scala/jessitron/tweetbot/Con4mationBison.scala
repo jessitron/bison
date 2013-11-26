@@ -7,12 +7,11 @@
 
  object Con4mationBison {
 
-   def agree(source: Process[Task, java.io.InputStream],
+   def agree(source: Process[Task, String],
              sink: Sink[Task, Message],
              maxTweets: Int): Process[Task, Unit] = {
 
-       val incomingTweets = (source flatMap (
-                            SearchInput.streamToJson _)) |>
+       val incomingTweets = source |>
                             SearchInput.jsonToTweets
        val rankedTweets = incomingTweets |> Rankers.randomo
        val triggers = Process.awakeEvery(500 millis) map
