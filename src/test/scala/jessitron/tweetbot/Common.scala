@@ -50,10 +50,7 @@ object Common {
     inResponse <- frequency((9, incomingTweet map {Some(_)}),(1, None))
   } yield TweetThis(tweet, inResponse)
 
-  val tweeted: Gen[Tweeted] = tweetThis map {Tweeted(_)}
-
   val randomMessage: Gen[Message] = frequency((10, tweetThis),
-                                              (10, tweeted),
                                               (1, value(TimeToTweet)))
 
   val assortedMessages: Gen[List[Message]] = smallNumberOf(randomMessage)

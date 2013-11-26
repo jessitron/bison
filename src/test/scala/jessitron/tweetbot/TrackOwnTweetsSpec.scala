@@ -8,7 +8,7 @@ import Prop._
 object TrackOwnTweetsSpec extends Properties("track what I am tweeting") {
   import Common._
 
-  property("Tweeted gets added to the queue") = forAll(assortedMessages){
+  property("TweetThis gets added to the queue") = forAll(assortedMessages){
     messages: List[Message] =>
       val (queue, readProcess) = async.queue[Message]
       val subject = TrackOwnTweets.enqueueTweets(queue) _
@@ -16,21 +16,22 @@ object TrackOwnTweetsSpec extends Properties("track what I am tweeting") {
 
       val queueContents = readProcess.runLog.run
 
-      val tweeted = messages collect { case t: Tweeted => t}
+      val tweeted = messages collect { case t: TweetThis => t}
 
       (output ?= messages.toSeq) :| "All messages should pass through" &&
       (tweeted forall { queueContents.contains(_)}) :| "all tweeted are queued" &&
       (tweeted.size =? queueContents.size) :| "nothing else is queued"
   }
 
-  property("Forgetting own tweets removes Tweeted") = forAll(assortedMessages) {
+  property("Forgetting own tweets removes TweetThis") = forAll(assortedMessages) {
     messages: List[Message] =>
+      // Generify name to avoidLoops?
     val subject = TrackOwnTweets.dropTweeteds
 
     val p = Process(messages:_*) |> subject
     val output = p.toList
 
-    val shouldBeExcluded: Message => Boolean = {m => m.isInstanceOf[Tweeted]}
+    val shouldBeExcluded: Message => Boolean = {m => m.isInstanceOf[TweetThis]}
     val shouldComeThrough = messages filterNot shouldBeExcluded
     val snuckThrough = output filter shouldBeExcluded
 

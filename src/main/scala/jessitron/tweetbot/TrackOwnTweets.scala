@@ -6,7 +6,7 @@ import scalaz.concurrent.Task
 
 object TrackOwnTweets {
 
-  val predicate: Message => Boolean = {m => m.isInstanceOf[Tweeted]}
+  val predicate: Message => Boolean = {m => m.isInstanceOf[TweetThis]}
 
   def enqueueTweets(q: Queue[Message])(p: Process[Task, Message]): Process[Task, Message] = {
     (p flatMap { m: Message =>

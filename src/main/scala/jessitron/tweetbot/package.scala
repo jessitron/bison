@@ -31,8 +31,6 @@ package object tweetbot {
   case class TweetThis(tweet: TweetDetail,
                        inReplyTo: Option[IncomingTweet] = None) extends Message
 
-  case class Tweeted(did: TweetThis) extends Message
-
   case class RespondTo(tweet:IncomingTweet) extends Message
 
   case class Opinion(points: Score, suggestedText: SuggestedText) {

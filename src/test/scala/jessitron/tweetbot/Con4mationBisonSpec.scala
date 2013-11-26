@@ -12,8 +12,8 @@ object TestTheWholeThing {
 
     val inputFromFile = SearchInput("fake", new SearchInputSpec.FileFetcher)
 
-    val outputChannel:Sink[Task, Any] =
-      io.stdOut map { _ compose {(a: Any) => a.toString + "\n"} }
+    val outputChannel:Sink[Task, Message] =
+      io.stdOut map { _ compose {(a: Message) => a.toString + "\n"} }
 
     val p = Con4mationBison.agree(inputFromFile, outputChannel, maxTweets(args), 500 millis)
 
