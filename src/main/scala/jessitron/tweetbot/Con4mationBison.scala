@@ -19,8 +19,8 @@
      def go(): Process1[Message, Message] =
      await1 flatMap { m: Message =>
        m match {
-         case AllDone => halt
-         case m => emit(m) ++ go()
+         case AllDone => println("Received AllDone"); halt
+         case m => emit(m) fby go()
        }
      }
      go()
@@ -34,7 +34,7 @@
        val (myTweetsQ, myTweetsS) = async.queue[Message]
        val incomingTweets = source |>
                             SearchInput.jsonToTweets
-       val slowIncomingTweets = Process.every(1 second).tee(incomingTweets)(tee.when)
+       val slowIncomingTweets = Process.every(100 millis).tee(incomingTweets)(tee.when)
        val rankingInput = intersperse(slowIncomingTweets,myTweetsS)
        val rankedTweets = rankingInput |> Rankers.randomo
 
