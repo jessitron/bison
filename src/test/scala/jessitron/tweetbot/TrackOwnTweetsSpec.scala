@@ -22,4 +22,19 @@ object TrackOwnTweetsSpec extends Properties("track what I am tweeting") {
       (tweeted forall { queueContents.contains(_)}) :| "all tweeted are queued" &&
       (tweeted.size =? queueContents.size) :| "nothing else is queued"
   }
+
+  property("Forgetting own tweets removes Tweeted") = forAll(assortedMessages) {
+    messages: List[Message] =>
+    val subject = TrackOwnTweets.dropTweeteds
+
+    val p = Process(messages:_*) |> subject
+    val output = p.toList
+
+    val shouldBeExcluded: Message => Boolean = {m => m.isInstanceOf[Tweeted]}
+    val shouldComeThrough = messages filterNot shouldBeExcluded
+    val snuckThrough = output filter shouldBeExcluded
+
+    (output.size ?= shouldComeThrough.size) :| "other messages should come through" &&
+    (snuckThrough.size =? 0) :| "no excluded messages should come through"
+  }
 }
