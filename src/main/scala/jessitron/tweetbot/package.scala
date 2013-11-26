@@ -32,6 +32,7 @@ package object tweetbot {
                        inReplyTo: Option[IncomingTweet] = None) extends Message
 
   case class RespondTo(tweet:IncomingTweet) extends Message
+  case object AllDone extends Message
 
   case class Opinion(points: Score, suggestedText: SuggestedText) {
     def hasSuggestion: Boolean = suggestedText.nonEmpty

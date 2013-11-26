@@ -14,6 +14,18 @@
      case \/-(m) => m
     }}
 
+   def haltIfAllDone: Process1[Message, Message] ={
+     import Process._
+     def go(): Process1[Message, Message] =
+     await1 flatMap { m: Message =>
+       m match {
+         case AllDone => halt
+         case m => emit(m) ++ go()
+       }
+     }
+     go()
+   }
+
    def agree(source: Process[Task, String],
              sink: Sink[Task, Message],
              maxTweets: Int,
@@ -26,15 +38,16 @@
        val rankingInput = intersperse(slowIncomingTweets,myTweetsS)
        val rankedTweets = rankingInput |> Rankers.randomo
 
-       val triggers = Process.awakeEvery(tweetFrequency) map
-                      {_ => TimeToTweet} take maxTweets
+       val triggers = (Process.awakeEvery(tweetFrequency) map
+                      {_ => TimeToTweet} take maxTweets) ++ Process.emit(AllDone)
 
 
        import TrackOwnTweets._
        enqueueTweets(myTweetsQ) (
        intersperse(rankedTweets, triggers) |>
+           haltIfAllDone |>
            dropTweeteds |>
-           Chooser.tweetPicker(5) |>
+           Chooser.tweetPicker(25) |>
            Respond.responder
          ) through sink
 

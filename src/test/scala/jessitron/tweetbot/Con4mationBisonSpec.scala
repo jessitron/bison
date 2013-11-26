@@ -22,7 +22,7 @@ object TestTheWholeThing {
   }
 
   def maxTweets(args: Array[String]): Int = {
-    10
+    20
   }
 
 }
