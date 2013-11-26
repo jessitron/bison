@@ -16,10 +16,19 @@ object Rankers {
   }}
 
   val FirstPersonSentence = ".*I ([^!?]*)[\\.!?].*".r
-  def iDoThisToo: Process1[Message, Message] = simpleOpinion { _.tweet.text match {
-      case FirstPersonSentence(words) => Some(Opinion(1.0, Some(s"I $words, too!")))
-      case _ => None
+  def iDoThisToo: Process1[Message, Message] = {
+    import Process._
+    def go(state: Double): Process1[Message, Message] = {
+      await1 flatMap { m: Message =>
+        val o = m match {
+          case i@IncomingTweet(TweetDetail(FirstPersonSentence(words)),_) =>
+            i.addMyTwoCents(Opinion(1.0, Some(s"I $words, too!")))
+          case m => m
+        }
+        emit(o) fby go(state)
+      }
     }
+    go(1.0)
   }
 
 }

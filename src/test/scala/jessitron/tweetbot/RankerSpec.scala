@@ -68,9 +68,11 @@ object RankerSpec extends Properties("Rankers") {
     val text = "I love matches!"
     val tweet = IncomingTweet(TweetDetail(text))
     val p = Process(tweet) |> Rankers.iDoThisToo
-    val output = p.toList.head.asInstanceOf[IncomingTweet]
+    val output = p.toList map {_.asInstanceOf[IncomingTweet]}
 
-    output.opinions.head.suggestedText.get ?= "I love matches, too!"
+    (output.nonEmpty) :| "got something back" &&
+    (output.head.opinions.nonEmpty) :| "got an opinion" &&
+    (output.head.opinions.head.suggestedText.get ?= "I love matches, too!") :| "expected opinion"
   }
 
 
