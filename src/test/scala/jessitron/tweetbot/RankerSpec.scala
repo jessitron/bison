@@ -75,5 +75,33 @@ object RankerSpec extends Properties("Rankers") {
     (output.head.opinions.head.suggestedText.get ?= "I love matches, too!") :| "expected opinion"
   }
 
+  property("Emits state when requested") = {
+    val request = EmitState
+    val subject = Rankers.iDoThisToo
+    val output = (Process(request) |> subject).toList
+    val nots = output.collect { case i: Notification[Rankers.RankerState] => i }
+
+    (output.size ?= 2) &&
+    (nots.size == 1)
+  }
+
+  property("Rusty's Ranker") = forAll(someIncomingTweets) {
+    incomingTweets =>
+      val subject = Rankers.shortIsBetter
+      val p = Process(incomingTweets:_*) |> subject
+      val output = p.toList map { _.asInstanceOf[IncomingTweet]}
+
+      def round(d: Double) = (d * 1000).ceil
+
+      val inputAndOutput = incomingTweets zip output
+      val tweetAndScore = inputAndOutput map { case (i, o) =>
+                           (i.tweet.text.length, round(o.totalScore - i.totalScore))}
+      val sortedByText = tweetAndScore sortBy (_._1)
+      val sortedByPoints = tweetAndScore sortBy (_._2) reverse
+
+      (sortedByText =? sortedByPoints) :| "Shortest text = most points"
+
+  }
+
 
 }

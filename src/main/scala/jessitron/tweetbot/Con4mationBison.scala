@@ -6,25 +6,18 @@
  import scala.concurrent.duration._
 
  object Con4mationBison {
-   def intersperse(p1: Process[Task,Message],
-                   p2: Process[Task, Message]): Process[Task, Message] =
-    p1.wye(p2)(wye.either) |> process1.lift {
-     m: Message \/ Message => m match {
-     case -\/(m) => m
-     case \/-(m) => m
-    }}
-
-   def haltIfAllDone: Process1[Message, Message] ={
-     import Process._
-     def go(): Process1[Message, Message] =
-     await1 flatMap { m: Message =>
-       m match {
-         case AllDone => println("Received AllDone"); halt
-         case m => emit(m) fby go()
-       }
-     }
-     go()
-   }
+   // solution for this in process in scalaz-stream; meanwhile, mutation
+   // as suggested by Paul
+   def intersectMerge[A](p1: Process[Task,A],
+                         p2: Process[Task,A]): Process[Task,A] =
+  Process.suspend {
+    import Process._
+    import java.util.concurrent.atomic.AtomicBoolean
+    val alive = new AtomicBoolean(true)
+    p1.takeWhile(_ => alive.get).onComplete(eval_(Task.delay(alive.set(false)))).
+    merge(
+    p2.takeWhile(_ => alive.get).onComplete(eval_(Task.delay(alive.set(false)))))
+  }
 
    def agree(source: Process[Task, String],
              sink: Sink[Task, Message],
@@ -34,22 +27,29 @@
        val (myTweetsQ, myTweetsS) = async.queue[Message]
        val incomingTweets = source |>
                             SearchInput.jsonToTweets
-       val slowIncomingTweets = Process.every(100 millis).tee(incomingTweets)(tee.when)
-       val rankingInput = intersperse(slowIncomingTweets,myTweetsS)
-       val rankedTweets = rankingInput |> Rankers.randomo
+       val slowIncomingTweets = Process.every(1000 millis).tee(incomingTweets)(tee.when)
+
+       val reportState = Process.awakeEvery(1 seconds) map { _ => EmitState}
+
+       val rankingInput = intersectMerge(
+                            intersectMerge(slowIncomingTweets, myTweetsS),
+                            reportState)
+       val rankedTweets = rankingInput |>
+                          Rankers.randomo |>
+                          Rankers.iDoThisToo |>
+                          Rankers.shortIsBetter
 
        val triggers = (Process.awakeEvery(tweetFrequency) map
-                      {_ => TimeToTweet} take maxTweets) ++ Process.emit(AllDone)
+                      {_ => TimeToTweet} take maxTweets)
 
 
        import TrackOwnTweets._
-       enqueueTweets(myTweetsQ) (
-       intersperse(rankedTweets, triggers) |>
-           haltIfAllDone |>
+       (enqueueTweets(myTweetsQ) (
+       intersectMerge(rankedTweets, triggers) |>
            dropTweeteds |>
            Chooser.tweetPicker(25) |>
            Respond.responder
-         ) through sink
+         )) through sink
 
    }
 

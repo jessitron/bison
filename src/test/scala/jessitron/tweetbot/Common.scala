@@ -35,10 +35,7 @@ object Common {
     tweet <- tweetDetail
   } yield IncomingTweet(tweet, opinions)
 
-  val someIncomingTweets: Gen[List[IncomingTweet]] = for {
-    n <- smallInt
-    list <- listOfN(n, incomingTweet)
-  } yield list
+  val someIncomingTweets: Gen[List[IncomingTweet]] = smallNumberOf(incomingTweet)
 
   val someRespondTos: Gen[List[RespondTo]] = for {
     n <- smallInt

@@ -11,11 +11,13 @@ object TestTheWholeThing {
   def main(args: Array[String]) {
 
     val inputFromFile = SearchInput("fake", new SearchInputSpec.FileFetcher)
+    val liveInput = SearchInput("clojure")
 
     val outputChannel:Sink[Task, Message] =
       io.stdOut map { _ compose {(a: Message) => a.toString + "\n"} }
 
-    val p = Con4mationBison.agree(inputFromFile, outputChannel, maxTweets(args), 500 millis)
+    val p = Con4mationBison.agree(liveInput, outputChannel, maxTweets(args),
+      500 millis)
 
     p.runLog.run
 

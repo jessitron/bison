@@ -38,4 +38,7 @@ package object tweetbot {
     def hasSuggestion: Boolean = suggestedText.nonEmpty
   }
   case class TweetDetail(text: TweetContents)
+
+  case object EmitState extends Message
+  case class Notification[A](from: String, contents: A) extends Message
 }

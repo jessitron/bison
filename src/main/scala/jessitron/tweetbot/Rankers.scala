@@ -15,20 +15,34 @@ object Rankers {
     case m => m
   }}
 
+  case class RankerState(tweetsSeen: Int = 0,
+       tweetsRanked: Int = 0,
+       pointsGivenOut: Double = 0.0,
+       recommendationsAccepted: Int = 0,
+       targetAveragePoints: Double = 1.0
+      )
+
   val FirstPersonSentence = ".*I ([^!?]*)[\\.!?].*".r
   def iDoThisToo: Process1[Message, Message] = {
     import Process._
-    def go(state: Double): Process1[Message, Message] = {
+    def go(state: RankerState): Process1[Message, Message] = {
       await1 flatMap { m: Message =>
         val o = m match {
           case i@IncomingTweet(TweetDetail(FirstPersonSentence(words)),_) =>
-            i.addMyTwoCents(Opinion(1.0, Some(s"I $words, too!")))
-          case m => m
+            Seq(i.addMyTwoCents(Opinion(1.0, Some(s"I $words, too!"))))
+          case EmitState => Seq(Notification("iDoThisToo", state), m)
+          case m => Seq(m)
         }
-        emit(o) fby go(state)
+        emitSeq(o) fby go(state)
       }
     }
-    go(1.0)
+    go(RankerState())
+  }
+
+  def shortIsBetter: Process1[Message,Message] = simpleOpinion {
+    i: IncomingTweet =>
+      val points = (70 - i.tweet.text.size) * (2.0 / 70)
+      Some(Opinion(points, Some("Rusty and I agree")))
   }
 
 }
