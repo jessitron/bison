@@ -1,3 +1,6 @@
+# this is where secret keys go
+keys.json
+
 # Created by http://gitignore.io
 
 ### Scala ###

@@ -1,3 +1,4 @@
+package jessitron.tweetbot
 
 import java.util.Scanner
 
@@ -6,23 +7,33 @@ import org.scribe.builder.api._
 import org.scribe.model._
 import org.scribe.oauth._
 
+// This is totally right out of scribe, modified for my own purposes
 object TwitterExample
 {
   val PROTECTED_RESOURCE_URL = "http://api.twitter.com/1.1/search/tweets.json"
+  val KEY_FILE_LOCATION = "src/main/resources/keys.json"
 
   def main(args: Array[String])
   {
-    val service = new ServiceBuilder().provider(classOf[TwitterApi]).
-                  apiKey("yKvmb3FXTzjDM9SVBQXg").
-                  apiSecret("cs7ecBCyAP4CXQuFErwMnDXG1Q4nqmOrcFxgeDRiSAs").
-                  build()
     val in = new Scanner(System.in)
+    println("First, go to https://dev.twitter.com/apps/ and create an app.")
+    println("You'll need its Consumer Key and its Consumer Secret.")
+    println("")
+    System.out.print("Enter the consumer key >>")
+    val consumerKey = in.nextLine()
+    System.out.print("Enter the consumer secret >>")
+    val consumerSecret = in.nextLine()
+
+    val service = new ServiceBuilder().provider(classOf[TwitterApi]).
+                  apiKey(consumerKey).
+                  apiSecret(consumerSecret).
+                  build()
 
    System.out.println("=== Twitter's OAuth Workflow ===")
    System.out.println()
 
  //Obtain the Request Token
- val accessToken = if (false) {
+ val accessToken = {
    System.out.println("Fetching the Request Token...")
    val requestToken = service.getRequestToken()
    System.out.println("Got the Request Token!")
@@ -39,28 +50,59 @@ object TwitterExample
  // Trade the Request Token and Verfier for the Access Token
    System.out.println("Trading the Request Token for an Access Token...")
    service.getAccessToken(requestToken, verifier)
-  }
- else
-   new Token("1546486698-Q5tiMgTLxYeC7mI5LRcdKONS29eT7zUivYZbAjT",
-     "F0vCPChOuMs13Wws610YGJTPUOgDHlenMimEMwR17LhTg")
+}
  System.out.println("Got the Access Token!")
- System.out.println("(if your curious it looks like this: " + accessToken + ")")
+ System.out.println("(if you're curious it looks like this: " + accessToken + ")")
  System.out.println()
 
 
  //Now let's go and ask for a protected resource!
  System.out.println("Now we're going to access a protected resource...")
  val request = new OAuthRequest(Verb.GET, PROTECTED_RESOURCE_URL)
- request.addQuerystringParameter("q","#oredev")
- //request.addBodyParameter("status", "this is sparta!  *")
+ request.addQuerystringParameter("q","#codemesh")
  service.signRequest(accessToken, request)
  val response = request.send()
  System.out.println("Got it!  Lets see what we found...")
  System.out.println()
- System.out.println(response.getBody())
+ val body = response.getBody()
+ System.out.println(body)
 
- System.out.println()
- System.out.println("Thats it man!  Go and build something awesome with Scribe!  :)")
-  }
+
+     parseTweets(body)
+     writeKeysToFile(AccessToken(consumerKey, consumerSecret, accessToken.getToken, accessToken.getSecret))
+
+     println(s"Success! Configuration written to $KEY_FILE_LOCATION")
 
  }
+
+ case class AccessToken(consumerKey: String, consumerSecret: String, userKey: String, userSecret: String)
+ object AccessToken {
+   import spray.json._
+   import DefaultJsonProtocol._
+   implicit val format: JsonFormat[AccessToken] = jsonFormat4(apply)
+ }
+
+ private def writeKeysToFile(accessToken: AccessToken) {
+   import scalaz.stream.{Process => P}
+
+   val fileWriter = scalaz.stream.io.fileChunkW(KEY_FILE_LOCATION)
+   def toBytes(s: String): Array[Byte] = s.toCharArray.map { _.toByte }
+
+   val p = P(accessToken).toSource |> writeJson |> scalaz.stream.process1.lift(toBytes) through fileWriter
+   p.run.run
+ }
+
+ import spray.json._
+ import DefaultJsonProtocol._
+   def writeJson[T : JsonWriter]: scalaz.stream.Process1[T, String] =
+   (scalaz.stream.process1.lift { obj: T =>
+       obj.toJson.prettyPrint
+   })
+
+ private def parseTweets(body: String) = {
+   import scalaz.concurrent.Task
+   import scalaz.stream.{Process => P}
+   (P(body) |> SearchInput.jsonToTweets) onFailure P.eval { Task.delay{ println(s"Unable to parse response: $body")}}
+ }
+
+}
