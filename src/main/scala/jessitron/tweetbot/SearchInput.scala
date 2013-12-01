@@ -23,9 +23,12 @@ object SearchInput {
   }
 
   val jsonToTweets: Process1[String, IncomingTweet] =
+    parseJson[SearchResults] |> resultsToTweets
+
+  def parseJson[T : JsonReader]: Process1[String, T] =
     (process1.lift { string: String =>
-      string.asJson.convertTo[SearchResults]
-    }) |> resultsToTweets
+      string.asJson.convertTo[T]
+    })
 
   def resultsToTweets: Process1[SearchResults, IncomingTweet] =
     Process.await1 flatMap { results: SearchResults =>
