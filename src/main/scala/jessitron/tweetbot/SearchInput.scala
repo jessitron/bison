@@ -6,6 +6,13 @@ import scalaz.concurrent.Task
 import spray.json._
 import DefaultJsonProtocol._
 
+case class AccessToken(consumerKey: String, consumerSecret: String, userKey: String, userSecret: String)
+object AccessToken {
+  import spray.json._
+  import DefaultJsonProtocol._
+  implicit val format: JsonFormat[AccessToken] = jsonFormat4(apply)
+}
+
 object SearchInput {
 
   def streamToJson(input: java.io.InputStream) = {
@@ -36,19 +43,16 @@ object SearchInput {
     }
 
   trait Fetcher {
-    def fetchBody(url: String, params: Map[String,String]): String
+    def fetchBody(url: String, params: Map[String,String]): Task[String]
   }
 
   def apply(queryString: String, fetcher: Fetcher = new RealFetcher):
   Process[Task, String] =  {
     val searchUrl = "http://api.twitter.com/1.1/search/tweets.json"
     def go(params:Map[String,String]) :  Process[Task, String] = {
-       Process.suspend {
-         val body = fetcher.fetchBody(searchUrl, params)
          // TODO: more than one signal
          // TODO: fallback to file
-         Process.emit(body)
-       }
+       Process.eval { fetcher.fetchBody(searchUrl, params) }
     }
     // TODO url-encode the query string
     go(Map("q" -> queryString,"result_type"->"recent"))
@@ -60,19 +64,34 @@ object SearchInput {
     import org.scribe.model._
     import org.scribe.oauth._
 
+    lazy val accessToken = TwitterConnection.accessTokenSource
+
     def fetchBody(url: String, params: Map[String,String]) = {
-      val service = new ServiceBuilder().provider(classOf[TwitterApi]).
-                  apiKey("yKvmb3FXTzjDM9SVBQXg").
-                  apiSecret("cs7ecBCyAP4CXQuFErwMnDXG1Q4nqmOrcFxgeDRiSAs").
-                  build()
-      val bisonToken =
-        new Token("1546486698-Q5tiMgTLxYeC7mI5LRcdKONS29eT7zUivYZbAjT",
-                  "F0vCPChOuMs13Wws610YGJTPUOgDHlenMimEMwR17LhTg")
-      val request = new OAuthRequest(Verb.GET, url)
-      params.foreach { case (key, value) => request.addQuerystringParameter(key, value)}
-      service.signRequest(bisonToken, request)
-      val response = request.send()
-      response.getBody()
+      accessToken map { token =>
+        val service = new ServiceBuilder().provider(classOf[TwitterApi]).
+                    apiKey(token.consumerKey).
+                    apiSecret(token.consumerSecret).
+                    build()
+        val bisonToken =
+          new Token(token.userKey, token.userSecret)
+        val request = new OAuthRequest(Verb.GET, url)
+        params.foreach { case (key, value) => request.addQuerystringParameter(key, value)}
+        service.signRequest(bisonToken, request)
+        val response = request.send()
+        response.getBody()
+      }
     }
   }
+}
+
+object TwitterConnection {
+
+  val keyFile = "keys.json"
+
+  def accessTokenSource = {
+      val inputFile = getClass.getClassLoader().getResourceAsStream(keyFile)
+      val p = SearchInput.streamToJson(inputFile) |> SearchInput.parseJson[AccessToken]
+      p.runLast.map { _.getOrElse(throw new RuntimeException("No access token obtained"))}
+  }
+
 }

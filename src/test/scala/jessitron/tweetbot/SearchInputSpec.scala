@@ -10,10 +10,10 @@ object SearchInputSpec extends Properties("SearchInput") {
   val testInputFile = "someTweets.json"
 
   class FileFetcher extends SearchInput.Fetcher {
-    def fetchBody(url: String, params: Map[String,String]):String = {
+    def fetchBody(url: String, params: Map[String,String]) = {
       val inputFile = getClass.getClassLoader().getResourceAsStream(testInputFile)
       val json = SearchInput.streamToJson(inputFile)
-      json.runLast.run.getOrElse("nothing read!")
+      json.runLast.map{_.getOrElse("nothing read!")}
     }
 
   }
