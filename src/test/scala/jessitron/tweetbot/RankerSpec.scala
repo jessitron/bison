@@ -66,20 +66,20 @@ object RankerSpec extends Properties("Rankers") {
       }  // making no statements if this ranker never expresses an opinion
   }
 
-  val arbitraryDouble = implicitly[Arbitrary[Double]].arbitrary
+  val arbitraryDouble = implicitly[Arbitrary[Double]].arbitrary suchThat { Math.abs(_) < 1000000}
   property("A ranker that learns from data coming in") = forAll(listOfN(100, realisticTweet), arbitraryDouble) {
     (incomingTweets, desiredAverageScore) =>
       val subject = iDoThisToo
       val input = evenOut(incomingTweets, subject.matches)
       val initialState = RankerState(targetAveragePoints = desiredAverageScore)
 
-      val p = Process(input:_*) |> subject.opinionate() |> process1.drop(10) // reduce influence of initial state
+      val p = Process(input:_*) |> subject.opinionate(initialState) |> process1.drop(10) // reduce influence of initial state
       val output = p.toList
       val averageScore = output.map(_.asInstanceOf[IncomingTweet].totalScore).sum / output.size
       val difference = desiredAverageScore - averageScore
       val percentDifference = Math.abs(difference / averageScore)
 
-      (percentDifference < 0.2) :| s"Hoping for an average of $desiredAverageScore but was $averageScore"
+      (difference < .01 || percentDifference < 0.2) :| s"Hoping for an average of $desiredAverageScore but was $averageScore"
   }
 
   // Make sure the ones that make the condition f true/false are

@@ -28,7 +28,7 @@ case class RankerState(tweetsSeen: Int = 0,
                        tweetsRanked: Int = 0,
                        pointsGivenOut: Double = 0.0,
                        recommendationsAccepted: Int = 0,
-                       targetAveragePoints: Double = 1.0
+                       targetAveragePoints: Double = 0.5
                       ) {
   def rankedATweet(points: Score) = {
     copy(tweetsSeen = tweetsSeen + 1,
@@ -39,7 +39,8 @@ case class RankerState(tweetsSeen: Int = 0,
     copy(tweetsSeen = tweetsSeen + 1)
   }
   def likelyAmountOfPoints: Score =
-    targetAveragePoints * (tweetsSeen / tweetsRanked)
+    if (tweetsRanked < 1) targetAveragePoints
+    else targetAveragePoints * (tweetsSeen / tweetsRanked)
 }
 
 
@@ -63,7 +64,6 @@ object iDoThisToo extends Ranker {
     def go(state: RankerState): Process1[Message, Message] = {
       await1 flatMap { m: Message =>
         val opinionO:Option[Opinion] = pf.lift((m, state))
-        println(s"Opinion: $opinionO")
         val o = (opinionO, m) match {
           case (Some(opinion), i: IncomingTweet) => Seq(i.addMyTwoCents(opinion))
           case (None, EmitState) => Seq(Notification("iDoThisToo", state), m)
@@ -76,7 +76,6 @@ object iDoThisToo extends Ranker {
             state.passedATweet()
           case _ => state
         }
-        println(s"Emitting: $o")
         emitSeq(o) fby go(s)
       }
     }
