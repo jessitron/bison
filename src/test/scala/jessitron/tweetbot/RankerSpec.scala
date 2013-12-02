@@ -1,5 +1,6 @@
-package jessitron.tweetbot
+package jessitron.tweetbot.ranker
 
+import jessitron.tweetbot._
 import scalaz.stream._
 
 import org.scalacheck._
@@ -45,11 +46,12 @@ object RankerSpec extends Properties("Rankers") {
     case 3 => s"$s1$punctuation #$hashtag :-)"
   }
 
+  // this tweet has no opinions yet. That's important
   val realisticTweet: Gen[IncomingTweet] = realisticText map {t => IncomingTweet(TweetDetail(t))}
 
   property("Sentences that start with I") = forAll(realisticTweet) {
     tweet =>
-      val p = Process(tweet) |> Rankers.iDoThisToo
+      val p = Process(tweet) |> iDoThisToo.opinionate()
       val output = p.toList.head.asInstanceOf[IncomingTweet]
 
       (output.opinions.size >= 1) ==> {
@@ -64,10 +66,38 @@ object RankerSpec extends Properties("Rankers") {
       }  // making no statements if this ranker never expresses an opinion
   }
 
+  val arbitraryDouble = implicitly[Arbitrary[Double]].arbitrary
+  property("A ranker that learns from data coming in") = forAll(listOfN(100, realisticTweet), arbitraryDouble) {
+    (incomingTweets, desiredAverageScore) =>
+      val subject = iDoThisToo
+      val input = evenOut(incomingTweets, subject.matches)
+      val initialState = RankerState(targetAveragePoints = desiredAverageScore)
+
+      val p = Process(input:_*) |> subject.opinionate() |> process1.drop(10) // reduce influence of initial state
+      val output = p.toList
+      val averageScore = output.map(_.asInstanceOf[IncomingTweet].totalScore).sum / output.size
+      val difference = desiredAverageScore - averageScore
+      val percentDifference = Math.abs(difference / averageScore)
+
+      (percentDifference < 0.2) :| s"Hoping for an average of $desiredAverageScore but was $averageScore"
+  }
+
+  // Make sure the ones that make the condition f true/false are
+  // distributed about evenly through the output list.
+  // All elements are included, reorder to spread f = true evenly.
+  def evenOut[A](stuff: List[A], f: A => Boolean) = {
+    val (larger, smaller) = stuff.partition(f) match {
+      case (s, s2) if s.size > s2.size => (s, s2)
+      case (s2, s) => (s, s2)
+    }
+    val bits = larger.grouped(larger.size / smaller.size)
+    smaller.foldLeft(List.empty[A])((acc, e) => e +: (bits.next() ++ acc))
+  }
+
   property("Easy example") = {
     val text = "I love matches!"
     val tweet = IncomingTweet(TweetDetail(text))
-    val p = Process(tweet) |> Rankers.iDoThisToo
+    val p = Process(tweet) |> iDoThisToo.opinionate()
     val output = p.toList map {_.asInstanceOf[IncomingTweet]}
 
     (output.nonEmpty) :| "got something back" &&
@@ -77,9 +107,9 @@ object RankerSpec extends Properties("Rankers") {
 
   property("Emits state when requested") = {
     val request = EmitState
-    val subject = Rankers.iDoThisToo
+    val subject = iDoThisToo.opinionate()
     val output = (Process(request) |> subject).toList
-    val nots = output.collect { case i: Notification[Rankers.RankerState] => i }
+    val nots = output.collect { case i: Notification[RankerState] => i }
 
     (output.size ?= 2) &&
     (nots.size == 1)

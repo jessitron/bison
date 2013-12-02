@@ -35,9 +35,9 @@
                             intersectMerge(slowIncomingTweets, myTweetsS),
                             reportState)
        val rankedTweets = rankingInput |>
-                          Rankers.randomo |>
-                          Rankers.iDoThisToo |>
-                          Rankers.shortIsBetter
+                          ranker.Rankers.randomo |>
+                          ranker.iDoThisToo.opinionate() |>
+                          ranker.Rankers.shortIsBetter
 
        val triggers = (Process.awakeEvery(tweetFrequency) map
                       {_ => TimeToTweet} take maxTweets)
