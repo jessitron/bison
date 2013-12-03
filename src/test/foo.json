@@ -1,0 +1,118 @@
+{
+    "search_metadata": {
+        "completed_in": 0.031,
+        "count": 1,
+        "max_id": 407652227000844288,
+        "max_id_str": "407652227000844288",
+        "next_results": "?max_id=407652227000844287&q=%23codemesh&count=1&result_type=recent",
+        "query": "%23codemesh",
+        "refresh_url": "?since_id=407652227000844288&q=%23codemesh&result_type=recent",
+        "since_id": 0,
+        "since_id_str": "0"
+    },
+    "statuses": [
+        {
+            "contributors": null,
+            "coordinates": null,
+            "created_at": "Mon Dec 02 23:27:19 +0000 2013",
+            "favorite_count": 0,
+            "favorited": false,
+            "geo": null,
+            "id": 407652227000844288,
+            "id_str": "407652227000844288",
+            "in_reply_to_screen_name": "StefanKarpinski",
+            "in_reply_to_status_id": null,
+            "in_reply_to_status_id_str": null,
+            "in_reply_to_user_id": 20333349,
+            "in_reply_to_user_id_str": "20333349",
+            "lang": "en",
+            "metadata": {
+                "iso_language_code": "en",
+                "result_type": "recent"
+            },
+            "place": {
+                "attributes": {},
+                "bounding_box": {
+                    "coordinates": [
+                        [
+                            [
+                                -0.14205790000000001,
+                                51.5185518
+                            ],
+                            [
+                                -0.076305,
+                                51.5185518
+                            ],
+                            [
+                                -0.076305,
+                                51.575300999999996
+                            ],
+                            [
+                                -0.14205790000000001,
+                                51.575300999999996
+                            ]
+                        ]
+                    ],
+                    "type": "Polygon"
+                },
+                "contained_within": [],
+                "country": "United Kingdom",
+                "country_code": "GB",
+                "full_name": "Islington, London",
+                "id": "9c37c76f5dfad0fa",
+                "name": "Islington",
+                "place_type": "city",
+                "url": "https://api.twitter.com/1.1/geo/id/9c37c76f5dfad0fa.json"
+            },
+            "retweet_count": 0,
+            "retweeted": false,
+            "source": "<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iOS</a>",
+            "text": "@StefanKarpinski no Julia tutorial tomorrow? :-( #codemesh  @CodeMeshIO",
+            "truncated": false,
+            "user": {
+                "contributors_enabled": false,
+                "created_at": "Wed Jun 17 06:03:21 +0000 2009",
+                "default_profile": true,
+                "default_profile_image": false,
+                "description": "Developer, Erlang, C, Objective-C, LISP and many others.  Hard-Realtime OS (rtems.org), Protocols. BSD kernel hacker, FreeBSD, MacOSX, iOS. Foodie, Physicist.",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    }
+                },
+                "favourites_count": 79,
+                "follow_request_sent": false,
+                "followers_count": 258,
+                "following": false,
+                "friends_count": 340,
+                "geo_enabled": true,
+                "id": 47873824,
+                "id_str": "47873824",
+                "is_translator": false,
+                "lang": "en",
+                "listed_count": 10,
+                "location": "Maisach, Germany",
+                "name": "Peer Stritzinger",
+                "notifications": false,
+                "profile_background_color": "C0DEED",
+                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+                "profile_background_tile": false,
+                "profile_image_url": "http://pbs.twimg.com/profile_images/1345068350/Hydraprog-3_normal.jpg",
+                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1345068350/Hydraprog-3_normal.jpg",
+                "profile_link_color": "0084B4",
+                "profile_sidebar_border_color": "C0DEED",
+                "profile_sidebar_fill_color": "DDEEF6",
+                "profile_text_color": "333333",
+                "profile_use_background_image": true,
+                "protected": false,
+                "screen_name": "peerstr",
+                "statuses_count": 2245,
+                "time_zone": "Berlin",
+                "url": null,
+                "utc_offset": 3600,
+                "verified": false
+            }
+        }
+    ]
+}

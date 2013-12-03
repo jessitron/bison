@@ -28,7 +28,7 @@ object Rankers {
     def go(state: RankerState): Process1[Message, Message] = {
       await1 flatMap { m: Message =>
         val o = m match {
-          case i@IncomingTweet(TweetDetail(FirstPersonSentence(words)),_) =>
+          case i@IncomingTweet(TweetDetail(FirstPersonSentence(words), _, _),_) =>
             Seq(i.addMyTwoCents(Opinion(1.0, Some(s"I $words, too!"))))
           case EmitState => Seq(Notification("iDoThisToo", state), m)
           case m => Seq(m)

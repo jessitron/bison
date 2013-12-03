@@ -3,6 +3,8 @@ package jessitron
 package object tweetbot {
   type Score = Double
   type TweetContents = String
+  type TweetId = String
+  type TweetAuthorHandle = String
   type SuggestedText = Option[String]
 
   sealed trait Message
@@ -22,7 +24,9 @@ package object tweetbot {
         def read(js: JsValue) = {
           val jso = js.asJsObject
           val text = jso.fields("text").toString
-          IncomingTweet(TweetDetail(text))
+          val idStr = jso.fields("id_str").toString
+          val author = jso.fields("screen_name").toString
+          IncomingTweet(TweetDetail(text, idStr, author))
         }
         def write(i: IncomingTweet): JsValue = ???
       }
@@ -37,7 +41,7 @@ package object tweetbot {
   case class Opinion(points: Score, suggestedText: SuggestedText) {
     def hasSuggestion: Boolean = suggestedText.nonEmpty
   }
-  case class TweetDetail(text: TweetContents)
+  case class TweetDetail(text: TweetContents, id: TweetId, author: TweetAuthorHandle)
 
   case object EmitState extends Message
   case class Notification[A](from: String, contents: A) extends Message
