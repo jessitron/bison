@@ -22,7 +22,7 @@ object Respond {
       Notification("No suitable response to", incoming)
     else {
       val highestRankingSuggestion = suitableOpinions.maxBy{_.points}.suggestedText.get
-      val responseTweet = OutgoingTweet(s"${incoming.from} ${highestRankingSuggestion}")
+      val responseTweet = OutgoingTweet(s"${incoming.from} ${highestRankingSuggestion}", Some(incoming.id))
       TweetThis(responseTweet, Some(incoming))
     }
   }

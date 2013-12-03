@@ -33,7 +33,7 @@ package object tweetbot {
 
   case class TweetThis(tweet: OutgoingTweet,
                        inReplyTo: Option[IncomingTweet] = None) extends Message
-  case class OutgoingTweet(text: TweetContents)
+  case class OutgoingTweet(text: TweetContents, replyTo: Option[TweetId] = None)
 
   case class RespondTo(tweet:IncomingTweet) extends Message
   case object AllDone extends Message

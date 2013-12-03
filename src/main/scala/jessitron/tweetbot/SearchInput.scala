@@ -126,7 +126,10 @@ object TwitterConnection {
   val statusUpdateURL = "https://api.twitter.com/1.1/statuses/update.json"
   def reallyTweet(token: AccessToken, tweet: OutgoingTweet) {
         val request = new OAuthRequest(Verb.POST, statusUpdateURL)
-        val params = Map("status" -> tweet.text)
+        val requiredParams = Map("status" -> tweet.text)
+        val params = if (tweet.replyTo.nonEmpty)
+           requiredParams + ("in_reply_to_status_id" -> tweet.replyTo.get)
+        else requiredParams
         params.foreach { case (key, value) => request.addBodyParameter(key, value)}
         TwitterConnection.signRequest(token)(request)
         val response = request.send()

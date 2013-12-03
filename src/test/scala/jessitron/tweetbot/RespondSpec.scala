@@ -22,7 +22,7 @@ object RespondSpec extends Properties("Respond") {
       }
 
       val responseTexts = output collect {
-        case TweetThis(OutgoingTweet(text), Some(i)) => (i.from, text)
+        case TweetThis(OutgoingTweet(text, _), Some(i)) => (i.from, text)
       }
 
       val expectedTweets = respondRequests map {_.tweet} filter (Respond.containsSuggestion)
