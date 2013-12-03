@@ -11,6 +11,7 @@ object RankerSpec extends Properties("Rankers") {
 
   property("The random ranker always adds an opinion") = forAll(incomingTweet){
     incoming: IncomingTweet =>
+      println("1")
       val p = Process(incoming) |> Rankers.randomo
       val output = p.toList collect { case i: IncomingTweet => i}
 
@@ -54,6 +55,7 @@ object RankerSpec extends Properties("Rankers") {
 
   property("Sentences that start with I") = forAll(realisticTweet) {
     tweet =>
+      println("2")
       val p = Process(tweet) |> iDoThisToo.opinionate()
       val output = p.toList.head.asInstanceOf[IncomingTweet]
 
@@ -72,6 +74,7 @@ object RankerSpec extends Properties("Rankers") {
   val arbitraryDouble = implicitly[Arbitrary[Double]].arbitrary suchThat { Math.abs(_) < 1000000}
   property("A ranker that learns from data coming in") = forAll(listOfN(100, realisticTweet), arbitraryDouble) {
     (incomingTweets, desiredAverageScore) =>
+      println("3")
       val subject = iDoThisToo
       val input = evenOut(incomingTweets, subject.matches)
       val initialState = RankerState(targetAveragePoints = desiredAverageScore)
@@ -98,6 +101,7 @@ object RankerSpec extends Properties("Rankers") {
   }
 
   property("Easy example") = {
+      println("4")
     val text = "I love matches!"
     val tweet = IncomingTweet(TweetDetail(text, "4"))
     val p = Process(tweet) |> iDoThisToo.opinionate()
@@ -109,6 +113,7 @@ object RankerSpec extends Properties("Rankers") {
   }
 
   property("Emits state when requested") = {
+      println("5")
     val request = RollCall()
     val subject = iDoThisToo.opinionate()
     val output = (Process(request) |> subject).toList.map { _.asInstanceOf[RollCall]}
@@ -118,24 +123,33 @@ object RankerSpec extends Properties("Rankers") {
   }
 
   property("Writes state to a channel at the end") = {
+      println("6")
 
     val (q, checkMe) = async.queue[RankerState]
+      println("6.1")
     val channel = async.toSink(q)
+      println("6.2")
 
     val anInitialState = RankerState(tweetsSeen=302)
 
     val subject = iDoThisToo.opinionate(stateOutputChannel = channel)
+      println("6.3")
 
     val p = Process[Message]().toSource |> subject
+      println("6.4")
     p.run.run
+      println("6.5")
 
+    q.close
     val outputted = checkMe.runLog.run
+      println("6.6")
 
     outputted == Seq(anInitialState)
   }
 
   property("Rusty's Ranker") = forAll(someIncomingTweets) {
     incomingTweets =>
+      println("7")
       val subject = Rankers.shortIsBetter
       val p = Process(incomingTweets:_*) |> subject
       val output = p.toList map { _.asInstanceOf[IncomingTweet]}
