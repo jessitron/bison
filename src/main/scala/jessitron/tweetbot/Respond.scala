@@ -15,10 +15,20 @@ object Respond {
 
   def containsSuggestion(incoming:IncomingTweet):Boolean = incoming.opinions.exists{_.hasSuggestion}
 
-  def chooseBestResponse(incoming: IncomingTweet): TweetThis = {
-    val highestRankingSuggestion = incoming.opinions.filter{_.hasSuggestion}.maxBy{_.points}
-    val responseTweet = OutgoingTweet(highestRankingSuggestion.suggestedText.get)
-    TweetThis(responseTweet, Some(incoming))
+  def chooseBestResponse(incoming: IncomingTweet): Message = {
+    val maxResponseLength = 140 - incoming.from.size
+    val suitableOpinions = incoming.opinions.filter(hasSuggestionShorterThan(maxResponseLength))
+    if (suitableOpinions.isEmpty)
+      Notification("No suitable response to", incoming)
+    else {
+      val highestRankingSuggestion = suitableOpinions.maxBy{_.points}.suggestedText.get
+      val responseTweet = OutgoingTweet(s"${incoming.from} ${highestRankingSuggestion}")
+      TweetThis(responseTweet, Some(incoming))
+    }
+  }
+
+  private def hasSuggestionShorterThan(maxResponseLength: Int): Opinion => Boolean = {o: Opinion =>
+    o.suggestedText.map(_.size < maxResponseLength).getOrElse(false)
   }
 
 }

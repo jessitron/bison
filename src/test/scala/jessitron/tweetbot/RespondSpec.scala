@@ -17,6 +17,9 @@ object RespondSpec extends Properties("Respond") {
       val respondedTweets = output collect {
         case TweetThis(_, Some(i)) => i
       }
+      val complainedTweets = output collect {
+        case Notification(_, i : IncomingTweet) => i
+      }
 
       val responseTexts = output collect {
         case TweetThis(OutgoingTweet(text), Some(i)) => (i.from, text)
@@ -24,7 +27,9 @@ object RespondSpec extends Properties("Respond") {
 
       val expectedTweets = respondRequests map {_.tweet} filter (Respond.containsSuggestion)
 
-      (expectedTweets forall { respondedTweets.contains(_)}) :| "All response requests with suggestions came out as tweets" &&
+      (expectedTweets forall { it: IncomingTweet =>
+         respondedTweets.contains(it) || complainedTweets.contains(it)}) :|
+      "All response requests with suggestions came out as tweets" &&
       (responseTexts forall { case (user, text) => text.contains(user)}) :| "All responses contain the username" &&
       (responseTexts forall { case (_, text) => text.size <= 140}) :| "All responses are short enough"
       // test whether the best response was chosen? (do we care?)
