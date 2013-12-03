@@ -47,8 +47,7 @@ case class RankerState(tweetsSeen: Int = 0,
 
 trait Ranker {
   def matches: IncomingTweet => Boolean
-  def opinionate(initial: RankerState,
-                 stateOutputChannel: Sink[Task, RankerState]): Process1[Message, Message]
+  def opinionate(initial: RankerState): Process1[Message, Message]
 }
 
 object iDoThisToo extends Ranker {
@@ -61,11 +60,7 @@ object iDoThisToo extends Ranker {
 
   def matches = pf.isDefinedAt(_, RankerState())
 
-  val defaultSink = io.stdOut map { _ compose {(a: Any) => a.toString + "\n"} }
-
-  def opinionate(initialState: RankerState = RankerState(),
-                 stateOutputChannel: Sink[Task, RankerState] = defaultSink
-                 ): Process1[Message, Message] = {
+  def opinionate(initialState: RankerState = RankerState()): Process1[Message, Message] = {
     import Process._
     def go(state: RankerState): Process1[Message, Message] = {
       await1 flatMap { m: Message =>
