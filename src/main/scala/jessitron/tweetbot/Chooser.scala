@@ -6,18 +6,14 @@ import scalaz.stream._
 object Chooser {
 
   def tweetPicker(poolSize: Int = 5): Process1[Message, Message] = {
+    import Process._
     def go(pool: TweetPool): Process1[Message, Message] = {
-      import Process._
-      await1 flatMap { message: Message =>
-        message match {
+      await1[Message] flatMap {
           case i: IncomingTweet => go(pool.absorb(i))
           case t@ TimeToTweet =>
-            pool.findBest match {
-              case None => emit(TimeToTweet) ++ go(pool)
-              case Some((tweet, newPool)) => emit(respondTo(tweet)) ++ go(newPool)
-            }
+            val (newMessage, newPool) = pool.findBest
+            emit(newMessage) ++ go(newPool)
           case m => emit(m) ++ go(pool)
-        }
       }
     }
     go(new TweetPool(poolSize))
@@ -26,7 +22,7 @@ object Chooser {
   private def respondTo(incoming: IncomingTweet) : RespondTo =
     RespondTo(incoming)
 
-  class TweetPool(size: Int, contents: Seq[IncomingTweet] = Vector()) {
+  class TweetPool(size: Int = 5, contents: Seq[IncomingTweet] = Vector()) {
     // There is probably a more efficient datastructure to use here. While poolSize is tiny it doesn't matter.
     private def copy(contents: Seq[IncomingTweet]) = new TweetPool(size, contents)
     def absorb(tweet: IncomingTweet): TweetPool =
@@ -39,11 +35,10 @@ object Chooser {
           case betterThanYou => this
         }
 
-    def findBest: Option[(IncomingTweet, TweetPool)] =
+    def findBest: (Message, TweetPool) =
       contents sortBy {_.totalScore * -1} match {
-        case Seq() => None
-        case Seq(head, tail@ _*) =>
-          Some((head, copy(tail)))
+        case Seq() => (TimeToTweet, this) // propagate the message
+        case Seq(head, tail@ _*) => (respondTo(head), copy(tail))
       }
   }
 }

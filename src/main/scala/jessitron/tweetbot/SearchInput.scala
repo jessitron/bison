@@ -64,19 +64,14 @@ object SearchInput {
     import org.scribe.model._
     import org.scribe.oauth._
 
-    lazy val accessToken = TwitterConnection.accessTokenSource
 
     def fetchBody(url: String, params: Map[String,String]) = {
-      accessToken map { token =>
-        val service = new ServiceBuilder().provider(classOf[TwitterApi]).
-                    apiKey(token.consumerKey).
-                    apiSecret(token.consumerSecret).
-                    build()
-        val bisonToken =
-          new Token(token.userKey, token.userSecret)
+      TwitterConnection.accessTokenSource .map
+      { _.getOrElse(throw new RuntimeException("No access token obtained"))}.map
+      { token =>
         val request = new OAuthRequest(Verb.GET, url)
         params.foreach { case (key, value) => request.addQuerystringParameter(key, value)}
-        service.signRequest(bisonToken, request)
+        TwitterConnection.signRequest(token)(request)
         val response = request.send()
         response.getBody()
       }
@@ -85,13 +80,57 @@ object SearchInput {
 }
 
 object TwitterConnection {
+    import org.scribe.builder._
+    import org.scribe.builder.api._
+    import org.scribe.model._
+    import org.scribe.oauth._
 
   val keyFile = "keys.json"
+  lazy val accessToken = TwitterConnection.accessTokenSource
 
   def accessTokenSource = {
       val inputFile = getClass.getClassLoader().getResourceAsStream(keyFile)
       val p = SearchInput.streamToJson(inputFile) |> SearchInput.parseJson[AccessToken]
-      p.runLast.map { _.getOrElse(throw new RuntimeException("No access token obtained"))}
+      p.runLast
+  }
+
+  def signRequest(token: AccessToken)(request: OAuthRequest) {
+        val service = new ServiceBuilder().provider(classOf[TwitterApi]).
+                    apiKey(token.consumerKey).
+                    apiSecret(token.consumerSecret).
+                    build()
+        val bisonToken =
+          new Token(token.userKey, token.userSecret)
+        service.signRequest(bisonToken, request)
+  }
+
+  def outputChannel(): Channel[Task, Message, Message] = {
+    accessTokenSource.run match {
+      case Some(token) =>
+        io.channel {
+          case m@ TweetThis(ogt, irt) => Task.delay {
+            reallyTweet(token, ogt)
+            Notification("Tweeted", m) }
+          case m => Task.delay { m }
+        }
+      case None =>
+        io.channel {
+          case m@ TweetThis(ogt, irt) => Task.delay {
+            println(s">> pretending to tweet $ogt");
+            Notification("Tweeted", m) }
+          case m => Task.delay { m }
+        }
+    }
+  }
+
+  val statusUpdateURL = "https://api.twitter.com/1.1/statuses/update.json"
+  def reallyTweet(token: AccessToken, tweet: OutgoingTweet) {
+        val request = new OAuthRequest(Verb.POST, statusUpdateURL)
+        val params = Map("status" -> tweet.text)
+        params.foreach { case (key, value) => request.addBodyParameter(key, value)}
+        TwitterConnection.signRequest(token)(request)
+        val response = request.send()
+        println(response.getBody())
   }
 
 }

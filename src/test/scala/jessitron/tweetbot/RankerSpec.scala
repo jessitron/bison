@@ -47,7 +47,10 @@ object RankerSpec extends Properties("Rankers") {
   }
 
   // this tweet has no opinions yet. That's important
-  val realisticTweet: Gen[IncomingTweet] = realisticText map {t => IncomingTweet(TweetDetail(t))}
+  val realisticTweet: Gen[IncomingTweet] = for {
+    text <- realisticText
+    id <- tweetId
+  } yield IncomingTweet(TweetDetail(text, id))
 
   property("Sentences that start with I") = forAll(realisticTweet) {
     tweet =>
@@ -96,7 +99,7 @@ object RankerSpec extends Properties("Rankers") {
 
   property("Easy example") = {
     val text = "I love matches!"
-    val tweet = IncomingTweet(TweetDetail(text))
+    val tweet = IncomingTweet(TweetDetail(text, "4"))
     val p = Process(tweet) |> iDoThisToo.opinionate()
     val output = p.toList map {_.asInstanceOf[IncomingTweet]}
 
@@ -106,13 +109,29 @@ object RankerSpec extends Properties("Rankers") {
   }
 
   property("Emits state when requested") = {
-    val request = EmitState
+    val request = RollCall()
     val subject = iDoThisToo.opinionate()
-    val output = (Process(request) |> subject).toList
-    val nots = output.collect { case i: Notification[RankerState] => i }
+    val output = (Process(request) |> subject).toList.map { _.asInstanceOf[RollCall]}
 
-    (output.size ?= 2) &&
-    (nots.size == 1)
+    (output.size ?= 1) &&
+    (output.head.whosHere.size == 1)
+  }
+
+  property("Writes state to a channel at the end") = {
+
+    val (q, checkMe) = async.queue[RankerState]
+    val channel = async.toSink(q)
+
+    val anInitialState = RankerState(tweetsSeen=302)
+
+    val subject = iDoThisToo.opinionate(stateOutputChannel = channel)
+
+    val p = Process[Message]().toSource |> subject
+    p.run.run
+
+    val outputted = checkMe.runLog.run
+
+    outputted == Seq(anInitialState)
   }
 
   property("Rusty's Ranker") = forAll(someIncomingTweets) {

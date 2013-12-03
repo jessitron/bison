@@ -19,7 +19,12 @@ object Common {
     l <- choose(1, 120)
     str <- alphaStr(l)
    } yield str
-  val tweetDetail: Gen[TweetDetail] = tweetText map {TweetDetail(_)}
+
+  val tweetId: Gen[TweetId] = choose(10000, 10000000) map {_.toString}
+  val tweetDetail: Gen[TweetDetail] = for {
+    text <- tweetText
+    id <- tweetId
+  } yield TweetDetail(text, id)
 
   val suggestedText: Gen[SuggestedText] = frequency((10, value(None)),
                                                     (90, tweetText map {Some(_)}))
@@ -42,8 +47,9 @@ object Common {
     list <- listOfN(n, incomingTweet)
   } yield (list map { RespondTo(_) })
 
+  val outgoingTweet = tweetText map { OutgoingTweet(_)}
   val tweetThis: Gen[TweetThis] = for {
-    tweet <- tweetDetail
+    tweet <- outgoingTweet
     inResponse <- frequency((9, incomingTweet map {Some(_)}),(1, None))
   } yield TweetThis(tweet, inResponse)
 

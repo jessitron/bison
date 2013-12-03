@@ -17,7 +17,7 @@ object Respond {
 
   def chooseBestResponse(incoming: IncomingTweet): TweetThis = {
     val highestRankingSuggestion = incoming.opinions.filter{_.hasSuggestion}.maxBy{_.points}
-    val responseTweet = TweetDetail(highestRankingSuggestion.suggestedText.get)
+    val responseTweet = OutgoingTweet(highestRankingSuggestion.suggestedText.get)
     TweetThis(responseTweet, Some(incoming))
   }
 

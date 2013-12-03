@@ -29,7 +29,7 @@
                             SearchInput.jsonToTweets
        val slowIncomingTweets = Process.every(1000 millis).tee(incomingTweets)(tee.when)
 
-       val reportState = Process.awakeEvery(1 seconds) map { _ => EmitState}
+       val reportState = Process.awakeEvery(1 seconds) map { _ => RollCall()}
 
        val rankingInput = intersectMerge(
                             intersectMerge(slowIncomingTweets, myTweetsS),

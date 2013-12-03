@@ -1,8 +1,12 @@
 package jessitron
 
+import spray.json._
+import DefaultJsonProtocol._
+
 package object tweetbot {
   type Score = Double
   type TweetContents = String
+  type TweetId = String
   type SuggestedText = Option[String]
 
   sealed trait Message
@@ -12,24 +16,22 @@ package object tweetbot {
                            opinions: Seq[Opinion] = Seq()) extends Message {
      def totalScore = opinions map {_.points} sum
      def addMyTwoCents(o: Opinion) = copy(opinions = o +: opinions)
+     def withOpinion(points:Score, text:TweetContents) = addMyTwoCents(Opinion(points, Some(text)))
   }
   object IncomingTweet {
-    import spray.json._
-    import DefaultJsonProtocol._
-
     implicit val deserializer: JsonFormat[IncomingTweet] =
       new JsonFormat[IncomingTweet] {
         def read(js: JsValue) = {
-          val jso = js.asJsObject
-          val text = jso.fields("text").toString
-          IncomingTweet(TweetDetail(text))
+          val tweet = js.convertTo[TweetDetail]
+          IncomingTweet(tweet)
         }
         def write(i: IncomingTweet): JsValue = ???
       }
   }
 
-  case class TweetThis(tweet: TweetDetail,
+  case class TweetThis(tweet: OutgoingTweet,
                        inReplyTo: Option[IncomingTweet] = None) extends Message
+  case class OutgoingTweet(text: TweetContents)
 
   case class RespondTo(tweet:IncomingTweet) extends Message
   case object AllDone extends Message
@@ -37,8 +39,16 @@ package object tweetbot {
   case class Opinion(points: Score, suggestedText: SuggestedText) {
     def hasSuggestion: Boolean = suggestedText.nonEmpty
   }
-  case class TweetDetail(text: TweetContents)
+  case class TweetDetail(text: TweetContents, id: TweetId)
+  case object TweetDetail {
+     implicit val format: JsonFormat[TweetDetail] = jsonFormat2(apply)
+  }
+  object TweetText {
+    def unapply(td: IncomingTweet): Option[String] = Some(td.tweet.text)
+  }
 
-  case object EmitState extends Message
-  case class Notification[A](from: String, contents: A) extends Message
+  case class RollCall(whosHere: Seq[Notification[Any]] = Seq()) extends Message {
+    def andMe[A](notice: Notification[A]) = copy(whosHere = notice +: whosHere)
+  }
+  case class Notification[+A](from: String, contents: A) extends Message
 }

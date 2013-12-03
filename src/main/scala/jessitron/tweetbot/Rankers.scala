@@ -1,6 +1,7 @@
 package jessitron.tweetbot.ranker
 
 import scalaz.stream._
+import scalaz.concurrent.Task
 import scala.util.Random
 import jessitron.tweetbot._
 
@@ -46,28 +47,33 @@ case class RankerState(tweetsSeen: Int = 0,
 
 trait Ranker {
   def matches: IncomingTweet => Boolean
-  def opinionate(initial: RankerState): Process1[Message, Message]
+  def opinionate(initial: RankerState,
+                 stateOutputChannel: Sink[Task, RankerState]): Process1[Message, Message]
 }
 
 object iDoThisToo extends Ranker {
   val FirstPersonSentence = ".*I ([^!?]*)[\\.!?].*".r
 
   val pf:PartialFunction[(Message, RankerState), Opinion] = {
-    case (i@IncomingTweet(TweetDetail(FirstPersonSentence(words)),_), state) =>
+    case (TweetText(FirstPersonSentence(words)), state) =>
          Opinion(state.likelyAmountOfPoints, Some(s"I $words, too!"))
   }
 
   def matches = pf.isDefinedAt(_, RankerState())
 
-  def opinionate(initialState: RankerState = RankerState()): Process1[Message, Message] = {
+  val defaultSink = io.stdOut map { _ compose {(a: Any) => a.toString + "\n"} }
+
+  def opinionate(initialState: RankerState = RankerState(),
+                 stateOutputChannel: Sink[Task, RankerState] = defaultSink
+                 ): Process1[Message, Message] = {
     import Process._
     def go(state: RankerState): Process1[Message, Message] = {
       await1 flatMap { m: Message =>
         val opinionO:Option[Opinion] = pf.lift((m, state))
         val o = (opinionO, m) match {
-          case (Some(opinion), i: IncomingTweet) => Seq(i.addMyTwoCents(opinion))
-          case (None, EmitState) => Seq(Notification("iDoThisToo", state), m)
-          case (_, m) => Seq(m)
+          case (Some(opinion), i: IncomingTweet) => i.addMyTwoCents(opinion)
+          case (_, rc@RollCall(_)) => rc.andMe(Notification("iDoThisToo", state))
+          case (_, m) => m
         }
         val s = (m,opinionO) match {
           case (i : IncomingTweet, Some(opinion)) =>
@@ -76,7 +82,7 @@ object iDoThisToo extends Ranker {
             state.passedATweet()
           case _ => state
         }
-        emitSeq(o) fby go(s)
+        emit(o) fby go(s)
       }
     }
     go(initialState)
