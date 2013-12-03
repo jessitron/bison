@@ -50,7 +50,8 @@ object RankerSpec extends Properties("Rankers") {
   val realisticTweet: Gen[IncomingTweet] = for {
     text <- realisticText
     id <- tweetId
-  } yield IncomingTweet(TweetDetail(text, id))
+    user <- twitterUser
+  } yield IncomingTweet(TweetDetail(text, id, user))
 
   property("Sentences that start with I") = forAll(realisticTweet) {
     tweet =>
@@ -99,7 +100,7 @@ object RankerSpec extends Properties("Rankers") {
 
   property("Easy example") = {
     val text = "I love matches!"
-    val tweet = IncomingTweet(TweetDetail(text, "4"))
+    val tweet = IncomingTweet(TweetDetail(text, "4", TwitterUser("me")))
     val p = Process(tweet) |> iDoThisToo.opinionate()
     val output = p.toList map {_.asInstanceOf[IncomingTweet]}
 

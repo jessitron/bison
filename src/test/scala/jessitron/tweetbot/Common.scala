@@ -21,10 +21,16 @@ object Common {
    } yield str
 
   val tweetId: Gen[TweetId] = choose(10000, 10000000) map {_.toString}
+  val username: Gen[String] = for {
+    i <- choose(2, 15)
+    str <- alphaStr(i)
+  } yield str
+  val twitterUser: Gen[TwitterUser] = username map {TwitterUser(_)}
   val tweetDetail: Gen[TweetDetail] = for {
     text <- tweetText
     id <- tweetId
-  } yield TweetDetail(text, id)
+    user <- twitterUser
+  } yield TweetDetail(text, id, user)
 
   val suggestedText: Gen[SuggestedText] = frequency((10, value(None)),
                                                     (90, tweetText map {Some(_)}))
