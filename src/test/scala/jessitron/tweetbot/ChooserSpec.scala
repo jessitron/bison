@@ -24,14 +24,18 @@ object ChooserSpec extends Properties("Chooser") {
                                             case _ => "other" }
 
       val expectedTweetQty = poolSize min incomingTweets.size min triggerCount
-      val expectedTweetOrder = incomingTweets sortBy {_.totalScore * -1 } take expectedTweetQty
       val expectedTriggers = (triggerCount - expectedTweetQty) max 0
 
       val receivedTweets = results.getOrElse("tweet", Seq()).map{_.asInstanceOf[RespondTo].tweet}
       val receivedTriggers = results.getOrElse("trigger", Seq())
 
+      val orderedByScoreDescending = expectedTweetQty < 2 ||
+      receivedTweets.sliding(2,1).forall {
+        case Seq(first, second) => first.totalScore >= second.totalScore
+      }
+
       (receivedTweets.size ?= expectedTweetQty)   :| "as many tweets as received, stored, and triggered are output" &&
-      (receivedTweets ?= expectedTweetOrder)      :| "tweets come out highest score first" &&
+      orderedByScoreDescending                    :| "tweets come out highest score first" &&
       (receivedTriggers.size ?= expectedTriggers) :| "extra triggers pass through" &&
       (results.get("other") ?= None)              :| "nothing else comes out"
         // perhaps we should pass through incoming tweets as well?

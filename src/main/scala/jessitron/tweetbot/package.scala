@@ -14,6 +14,7 @@ package object tweetbot {
 
   case class IncomingTweet(tweet: TweetDetail,
                            opinions: Seq[Opinion] = Seq()) extends Message {
+     def id = tweet.id_str
      def totalScore = opinions map {_.points} sum
      def addMyTwoCents(o: Opinion) = copy(opinions = o +: opinions)
      def withOpinion(points:Score, text:TweetContents) = addMyTwoCents(Opinion(points, Some(text)))
@@ -39,7 +40,7 @@ package object tweetbot {
   case class Opinion(points: Score, suggestedText: SuggestedText) {
     def hasSuggestion: Boolean = suggestedText.nonEmpty
   }
-  case class TweetDetail(text: TweetContents, id: TweetId)
+  case class TweetDetail(text: TweetContents, id_str: TweetId)
   case object TweetDetail {
      implicit val format: JsonFormat[TweetDetail] = jsonFormat2(apply)
   }
