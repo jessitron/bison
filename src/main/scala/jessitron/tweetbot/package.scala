@@ -15,6 +15,7 @@ package object tweetbot {
   case class IncomingTweet(tweet: TweetDetail,
                            opinions: Seq[Opinion] = Seq()) extends Message {
      def id = tweet.id_str
+     def retweeted: Boolean = tweet.retweeted_status.nonEmpty
      def from = s"@${tweet.user.screen_name}"
      def totalScore = opinions map {_.points} sum
      def addMyTwoCents(o: Opinion) = copy(opinions = o +: opinions)
@@ -45,9 +46,13 @@ package object tweetbot {
   object TwitterUser {
      implicit val format: JsonFormat[TwitterUser] = jsonFormat1(apply)
   }
-  case class TweetDetail(text: TweetContents, id_str: TweetId, user: TwitterUser)
+  case class Retweeted(id_str:TweetId) // I would reuse TweetDetail except for a bug in spray-json. issue #77
+  case object Retweeted {
+     implicit val format: JsonFormat[Retweeted] = jsonFormat1(apply)
+  }
+  case class TweetDetail(text: TweetContents, id_str: TweetId, user: TwitterUser, retweeted_status: Option[Retweeted] = None)
   case object TweetDetail {
-     implicit val format: JsonFormat[TweetDetail] = jsonFormat3(apply)
+     implicit val format: JsonFormat[TweetDetail] = jsonFormat4(apply)
   }
   object TweetText {
     def unapply(td: IncomingTweet): Option[String] = Some(td.tweet.text)

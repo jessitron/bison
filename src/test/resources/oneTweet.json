@@ -1,0 +1,225 @@
+    {
+      "metadata": {
+        "result_type": "recent",
+        "iso_language_code": "en"
+      },
+      "created_at": "Mon Nov 25 17:25:30 +0000 2013",
+      "id": 4.0502445966637e+17,
+      "id_str": "405024459666374656",
+      "text": "RT @_JamesWard: Check out the video from my #oredev talk \"Building Reactive Apps with Play Framework, Akka, &amp; Scala\" https:\/\/t.co\/yHFR3P2Lgo",
+      "source": "<a href=\"http:\/\/twitter.com\" rel=\"nofollow\">Twitter Web Client<\/a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 1748864856,
+        "id_str": "1748864856",
+        "name": "Shawn Garner",
+        "screen_name": "shawndgarner",
+        "location": "Des Moines",
+        "description": "Agile Software Developer",
+        "url": null,
+        "entities": {
+          "description": {
+            "urls": [
+
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 4,
+        "friends_count": 40,
+        "listed_count": 0,
+        "created_at": "Sat Sep 07 14:18:17 +0000 2013",
+        "favourites_count": 9,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 10,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+        "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/378800000519100496\/a5095da19cf90331a4a8087484960521_normal.jpeg",
+        "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/378800000519100496\/a5095da19cf90331a4a8087484960521_normal.jpeg",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "metadata": {
+          "result_type": "recent",
+          "iso_language_code": "en"
+        },
+        "created_at": "Mon Nov 18 16:27:22 +0000 2013",
+        "id": 4.0247311528168e+17,
+        "id_str": "402473115281678336",
+        "text": "Check out the video from my #oredev talk \"Building Reactive Apps with Play Framework, Akka, &amp; Scala\" https:\/\/t.co\/yHFR3P2Lgo",
+        "source": "web",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 799616,
+          "id_str": "799616",
+          "name": "James Ward",
+          "screen_name": "_JamesWard",
+          "location": "",
+          "description": "Developer Advocate at Typesafe",
+          "url": "http:\/\/t.co\/7ueuYrnt",
+          "entities": {
+            "url": {
+              "urls": [
+                {
+                  "url": "http:\/\/t.co\/7ueuYrnt",
+                  "expanded_url": "http:\/\/jamesward.com",
+                  "display_url": "jamesward.com",
+                  "indices": [
+                    0,
+                    20
+                  ]
+                }
+              ]
+            },
+            "description": {
+              "urls": [
+
+              ]
+            }
+          },
+          "protected": false,
+          "followers_count": 7527,
+          "friends_count": 1031,
+          "listed_count": 456,
+          "created_at": "Wed Feb 28 00:07:01 +0000 2007",
+          "favourites_count": 513,
+          "utc_offset": -28800,
+          "time_zone": "Pacific Time (US & Canada)",
+          "geo_enabled": true,
+          "verified": false,
+          "statuses_count": 1861,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "C0DEED",
+          "profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+          "profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+          "profile_background_tile": false,
+          "profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/378800000606902520\/0c9b5897d0f28e53f5666639551a7512_normal.jpeg",
+          "profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/378800000606902520\/0c9b5897d0f28e53f5666639551a7512_normal.jpeg",
+          "profile_banner_url": "https:\/\/pbs.twimg.com\/profile_banners\/799616\/1353476610",
+          "profile_link_color": "0084B4",
+          "profile_sidebar_border_color": "C0DEED",
+          "profile_sidebar_fill_color": "DDEEF6",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "default_profile": true,
+          "default_profile_image": false,
+          "following": true,
+          "follow_request_sent": false,
+          "notifications": false
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "retweet_count": 15,
+        "favorite_count": 34,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "oredev",
+              "indices": [
+                28,
+                35
+              ]
+            }
+          ],
+          "symbols": [
+
+          ],
+          "urls": [
+            {
+              "url": "https:\/\/t.co\/yHFR3P2Lgo",
+              "expanded_url": "https:\/\/vimeo.com\/78892176",
+              "display_url": "vimeo.com\/78892176",
+              "indices": [
+                105,
+                128
+              ]
+            }
+          ],
+          "user_mentions": [
+
+          ]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "retweet_count": 15,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "oredev",
+            "indices": [
+              44,
+              51
+            ]
+          }
+        ],
+        "symbols": [
+
+        ],
+        "urls": [
+          {
+            "url": "https:\/\/t.co\/yHFR3P2Lgo",
+            "expanded_url": "https:\/\/vimeo.com\/78892176",
+            "display_url": "vimeo.com\/78892176",
+            "indices": [
+              121,
+              144
+            ]
+          }
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "_JamesWard",
+            "name": "James Ward",
+            "id": 799616,
+            "id_str": "799616",
+            "indices": [
+              3,
+              14
+            ]
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    }
