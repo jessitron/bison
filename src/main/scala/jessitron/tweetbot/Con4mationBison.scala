@@ -37,7 +37,7 @@
        val rankedTweets = rankingInput |>
                           ranker.Rankers.randomo |>
                           ranker.Rankers.retweetsAreRightOut |>
-                          ranker.iDoThisToo.opinionate(2.0) |>
+                          ranker.iDoThisToo.opinionate() |>
                           ranker.Rankers.shortIsBetter
 
        val triggers = (Process.awakeEvery(tweetFrequency) map

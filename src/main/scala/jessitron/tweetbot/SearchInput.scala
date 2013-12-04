@@ -61,7 +61,8 @@ object SearchInput {
       await(body)(nextPage(params))
     }
     // TODO url-encode the query string
-    go(Map("q" -> queryString,"result_type"->"recent", "include_entities"->"0"))
+    go(Map("q" -> queryString,"result_type"->"recent", "include_entities"->"0",
+           "count" -> "100"))
   }
 
   class RealFetcher extends Fetcher {
@@ -79,7 +80,11 @@ object SearchInput {
         params.foreach { case (key, value) => request.addQuerystringParameter(key, value)}
         TwitterConnection.signRequest(token)(request)
         val response = request.send()
-        response.getBody()
+        val body = response.getBody()
+        if (body.length < 1000) {
+          println("uh-oh... " + body)
+        }
+        body
       }
     }
   }

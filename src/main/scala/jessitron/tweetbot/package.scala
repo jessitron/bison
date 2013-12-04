@@ -20,6 +20,10 @@ package object tweetbot {
      def totalScore = opinions map {_.points} sum
      def addMyTwoCents(o: Opinion) = copy(opinions = o +: opinions)
      def withOpinion(points:Score, text:TweetContents) = addMyTwoCents(Opinion(points, Some(text)))
+
+     override def toString: String = s"\nIncomingTweet: ${tweet.text}" +
+     opinions.map{o => s"\n   ${o.points} points" +
+        o.suggestedText.map(t => s", and you might say '$t'").getOrElse("")}.mkString("")
   }
   object IncomingTweet {
     implicit val deserializer: JsonFormat[IncomingTweet] =
@@ -33,7 +37,9 @@ package object tweetbot {
   }
 
   case class TweetThis(tweet: OutgoingTweet,
-                       inReplyTo: Option[IncomingTweet] = None) extends Message
+                       inReplyTo: Option[IncomingTweet] = None) extends Message {
+    override def toString = (s"\nTweet This>>> ${tweet.text} <<< in response to" + inReplyTo)
+  }
   case class OutgoingTweet(text: TweetContents, replyTo: Option[TweetId] = None)
 
   case class RespondTo(tweet:IncomingTweet) extends Message

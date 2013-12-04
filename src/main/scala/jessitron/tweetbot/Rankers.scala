@@ -35,7 +35,7 @@ case class RankerState(tweetsSeen: Int = 0,
                        tweetsRanked: Int = 0,
                        pointsGivenOut: Double = 0.0,
                        recommendationsAccepted: Int = 0,
-                       targetAveragePoints: Double = 0.5
+                       targetAveragePoints: Double = 1
                       ) {
   def rankedATweet(points: Score) = {
     copy(tweetsSeen = tweetsSeen + 1,
