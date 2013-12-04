@@ -15,7 +15,7 @@ package object tweetbot {
   case class IncomingTweet(tweet: TweetDetail,
                            opinions: Seq[Opinion] = Seq()) extends Message {
      def id = tweet.id_str
-     def retweeted: Boolean = tweet.retweeted_status.nonEmpty
+     def retweet: Boolean = tweet.retweeted_status.nonEmpty
      def from = s"@${tweet.user.screen_name}"
      def totalScore = opinions map {_.points} sum
      def addMyTwoCents(o: Opinion) = copy(opinions = o +: opinions)

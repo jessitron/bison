@@ -17,6 +17,12 @@ object Rankers {
     case m => m
   }}
 
+  val retweetsAreRightOut: Process1[Message, Message] =
+    Process.await1[Message] flatMap {
+      case i: IncomingTweet if i.retweet => Process.halt
+      case m => Process.emit(m)
+    } repeat
+
   def shortIsBetter: Process1[Message,Message] = simpleOpinion {
     i: IncomingTweet =>
       val points = (70 - i.tweet.text.size) * (2.0 / 70)
@@ -51,7 +57,7 @@ trait Ranker {
 }
 
 object iDoThisToo extends Ranker {
-  val FirstPersonSentence = ".*I ([^!?]*)[\\.!?].*".r
+  val FirstPersonSentence = ".*I ([^.!?]*).*".r
 
   val pf:PartialFunction[(Message, RankerState), Opinion] = {
     case (TweetText(FirstPersonSentence(words)), state) =>

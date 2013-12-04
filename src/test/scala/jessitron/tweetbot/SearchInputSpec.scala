@@ -26,7 +26,7 @@ object SearchInputSpec extends Properties("SearchInput") {
 
       (output.size == 15) :| "There are 15 tweets in that file" &&
       output.head.tweet.text.contains("Check out the video from my #oredev talk") &&
-      output.find(_.id == "404899856378261504").get.retweeted :| "That one should be retweeted"
+      output.find(_.id == "404899856378261504").get.retweet :| "That one should be retweety"
     }
 
 

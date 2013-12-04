@@ -36,6 +36,7 @@
                             reportState)
        val rankedTweets = rankingInput |>
                           ranker.Rankers.randomo |>
+                          ranker.Rankers.retweetsAreRightOut |>
                           ranker.iDoThisToo.opinionate() |>
                           ranker.Rankers.shortIsBetter
 
