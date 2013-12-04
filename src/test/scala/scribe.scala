@@ -8,7 +8,7 @@ import org.scribe.model._
 import org.scribe.oauth._
 
 // This is totally right out of scribe, modified for my own purposes
-object TwitterExample
+object AuthorizationSetup
 {
   val PROTECTED_RESOURCE_URL = "http://api.twitter.com/1.1/search/tweets.json"
   val KEY_FILE_LOCATION = "src/main/resources/keys.json"
