@@ -48,14 +48,20 @@ object SearchInput {
 
   def apply(queryString: String, fetcher: Fetcher = new RealFetcher):
   Process[Task, String] =  {
+    import Process._
     val searchUrl = "http://api.twitter.com/1.1/search/tweets.json"
+    val NextMaxId = """"next_results": "?max_id=([0-9]*)&q""".r
+    def nextPage(params: Map[String,String])(body: String) = emit(body) ++ (NextMaxId.findFirstIn(body) match {
+      case Some(NextMaxId(max)) => go(params + ("max_id" -> max))
+      case None => halt
+    })
     def go(params:Map[String,String]) :  Process[Task, String] = {
-         // TODO: more than one signal
-         // TODO: fallback to file
-       Process.eval { fetcher.fetchBody(searchUrl, params) }
+      // TODO: fallback to file
+      val body = fetcher.fetchBody(searchUrl, params)
+      await(body)(nextPage(params))
     }
     // TODO url-encode the query string
-    go(Map("q" -> queryString,"result_type"->"recent"))
+    go(Map("q" -> queryString,"result_type"->"recent", "include_entities"->"0"))
   }
 
   class RealFetcher extends Fetcher {

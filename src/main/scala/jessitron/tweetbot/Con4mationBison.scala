@@ -27,9 +27,9 @@
        val (myTweetsQ, myTweetsS) = async.queue[Message]
        val incomingTweets = source |>
                             SearchInput.jsonToTweets
-       val slowIncomingTweets = Process.every(1000 millis).tee(incomingTweets)(tee.when)
+       val slowIncomingTweets = Process.every(750 millis).tee(incomingTweets)(tee.when)
 
-       val reportState = Process.awakeEvery(1 seconds) map { _ => RollCall()}
+       val reportState = Process.awakeEvery(3 seconds) map { _ => RollCall()}
 
        val rankingInput = intersectMerge(
                             intersectMerge(slowIncomingTweets, myTweetsS),
@@ -37,7 +37,7 @@
        val rankedTweets = rankingInput |>
                           ranker.Rankers.randomo |>
                           ranker.Rankers.retweetsAreRightOut |>
-                          ranker.iDoThisToo.opinionate() |>
+                          ranker.iDoThisToo.opinionate(2.0) |>
                           ranker.Rankers.shortIsBetter
 
        val triggers = (Process.awakeEvery(tweetFrequency) map

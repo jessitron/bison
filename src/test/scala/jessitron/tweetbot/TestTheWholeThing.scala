@@ -19,7 +19,7 @@ object TestTheWholeThing {
     val liveOutput = TwitterConnection.outputChannel()
 
     val p = Con4mationBison.agree(liveInput, liveOutput, maxTweets(args),
-      500 millis)
+      15 seconds)
 
     (p through outputChannel).run.run
   }
