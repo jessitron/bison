@@ -11,16 +11,17 @@ object TestTheWholeThing {
   def main(args: Array[String]) {
 
     val inputFromFile = SearchInput("fake", new SearchInputSpec.FileFetcher)
-    val liveInput = SearchInput("clojure")
+    val liveInput = SearchInput("#codemesh")
 
     val outputChannel:Sink[Task, Message] =
       io.stdOut map { _ compose {(a: Message) => a.toString + "\n"} }
 
-    val p = Con4mationBison.agree(liveInput, outputChannel, maxTweets(args),
+    val liveOutput = TwitterConnection.outputChannel()
+
+    val p = Con4mationBison.agree(liveInput, liveOutput, maxTweets(args),
       500 millis)
 
-    p.runLog.run
-
+    (p through outputChannel).run.run
   }
 
   def maxTweets(args: Array[String]): Int = {

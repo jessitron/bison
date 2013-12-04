@@ -19,10 +19,10 @@
     p2.takeWhile(_ => alive.get).onComplete(eval_(Task.delay(alive.set(false)))))
   }
 
-   def agree(source: Process[Task, String],
-             sink: Sink[Task, Message],
+   def agree[A](source: Process[Task, String],
+             sink: Channel[Task, Message, A],
              maxTweets: Int,
-             tweetFrequency: Duration = 10 seconds): Process[Task, Unit] = {
+             tweetFrequency: Duration = 10 seconds): Process[Task, A] = {
 
        val (myTweetsQ, myTweetsS) = async.queue[Message]
        val incomingTweets = source |>

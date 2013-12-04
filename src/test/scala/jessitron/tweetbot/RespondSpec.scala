@@ -25,7 +25,7 @@ object RespondSpec extends Properties("Respond") {
         case TweetThis(OutgoingTweet(text, _), Some(i)) => (i.from, text)
       }
 
-      val expectedTweets = respondRequests map {_.tweet} filter (Respond.containsSuggestion)
+      val expectedTweets = respondRequests map {_.tweet}
 
       (expectedTweets forall { it: IncomingTweet =>
          respondedTweets.contains(it) || complainedTweets.contains(it)}) :|
@@ -35,6 +35,19 @@ object RespondSpec extends Properties("Respond") {
       // test whether the best response was chosen? (do we care?)
   }
 
+  property("Simple example") = {
+    val input = RespondTo(IncomingTweet(
+      TweetDetail("boogers", "123", TwitterUser("josevalim")),
+      List(Opinion(1.0, Some("yeah baby")))))
+
+    val subject = Respond.responder
+    val p = Process(input) |> subject
+    val output = p.toList
+
+    (output.length ?= 1) &&
+    (output.head ?= TweetThis(
+      OutgoingTweet("@josevalim yeah baby", Some("123")), Some(input.tweet)))
+  }
   // test containsSuggestion
 
 }

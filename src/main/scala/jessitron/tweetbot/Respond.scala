@@ -7,13 +7,11 @@ object Respond {
   def responder: Process1[Message,Message] = process1.lift {
     m: Message =>
       m match {
-        case RespondTo(i) if containsSuggestion(i) =>
+        case RespondTo(i) =>
           chooseBestResponse(i)
         case other => other
       }
   }
-
-  def containsSuggestion(incoming:IncomingTweet):Boolean = incoming.opinions.exists{_.hasSuggestion}
 
   def chooseBestResponse(incoming: IncomingTweet): Message = {
     val maxResponseLength = 140 - incoming.from.size
