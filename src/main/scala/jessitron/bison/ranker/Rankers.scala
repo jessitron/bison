@@ -46,15 +46,14 @@ trait Ranker {
     import Process._
     def go(state: RankerState): Process1[Message, Message] = {
       await1 flatMap { m: Message =>
-        val (o: Message, stateChange: StateChange) = m match {
+        val (o, stateChange):(Message, StateChange) = m match {
           case rc@RollCall(_) => (rc.andMe(Notification("iDoThisToo", state)), nothing)
           case i: IncomingTweet =>
-            val opinionO:Option[Opinion] = consider(i, state)
-            val o = opinionO match {
+            consider(i, state) match {
               case Some(opinion) => (i.addMyTwoCents(opinion), recordRankedTweet(opinion))
               case None => (m, recordOtherTweet)
             }
-          case m => (m, nothing)
+          case other => (other, nothing)
         }
         emit(o) fby go(stateChange(state))
       }
