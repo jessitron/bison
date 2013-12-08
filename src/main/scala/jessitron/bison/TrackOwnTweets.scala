@@ -1,4 +1,4 @@
-package jessitron.tweetbot
+package jessitron.bison
 
 import scalaz.stream._
 import async.mutable.Queue

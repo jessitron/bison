@@ -1,4 +1,4 @@
-package jessitron.tweetbot
+package jessitron.bison
 
 import org.scalacheck._
 import Gen._

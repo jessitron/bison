@@ -1,9 +1,9 @@
-package jessitron.tweetbot.ranker
+package jessitron.bison.ranker
 
 import scalaz.stream._
 import scalaz.concurrent.Task
 import scala.util.Random
-import jessitron.tweetbot._
+import jessitron.bison._
 
 object Rankers {
 

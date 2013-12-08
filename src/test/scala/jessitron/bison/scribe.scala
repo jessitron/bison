@@ -1,4 +1,4 @@
-package jessitron.tweetbot
+package jessitron.bison
 
 import java.util.Scanner
 

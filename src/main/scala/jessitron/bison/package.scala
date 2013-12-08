@@ -3,7 +3,7 @@ package jessitron
 import spray.json._
 import DefaultJsonProtocol._
 
-package object tweetbot {
+package object bison {
   type Score = Double
   type TweetContents = String
   type TweetId = String

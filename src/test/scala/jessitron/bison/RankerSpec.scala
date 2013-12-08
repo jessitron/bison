@@ -1,6 +1,6 @@
-package jessitron.tweetbot.ranker
+package jessitron.bison.ranker
 
-import jessitron.tweetbot._
+import jessitron.bison._
 import scalaz.stream._
 
 import org.scalacheck._

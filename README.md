@@ -31,7 +31,7 @@ Here's what I ran during the talk, in the repl:
     import Process._
     import scalaz.concurrent.Task
     import scala.concurrent.duration._
-    import jessitron.tweetbot._
+    import jessitron.bison._
 
     val triggerTimes: Process[Task, Duration] = Process.awakeEvery(1.second)
     val triggers: Process[Task, Message] = triggerTimes.map{ d => println(s"triggering at $d"); TimeToTweet }.take(10)
