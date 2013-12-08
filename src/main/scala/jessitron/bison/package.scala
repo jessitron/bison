@@ -45,7 +45,7 @@ package object bison {
   case class RespondTo(tweet:IncomingTweet) extends Message
   case object AllDone extends Message
 
-  case class Opinion(points: Score, suggestedText: SuggestedText) {
+  case class Opinion(points: Score, suggestedText: SuggestedText = None) {
     def hasSuggestion: Boolean = suggestedText.nonEmpty
   }
   case class TwitterUser(screen_name: String)
