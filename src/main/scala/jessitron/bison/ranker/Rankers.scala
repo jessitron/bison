@@ -34,8 +34,33 @@ object Rankers {
 
 
 trait Ranker {
-  def matches: IncomingTweet => Boolean
-  def opinionate(initial: RankerState): Process1[Message, Message]
+  def consider(t: IncomingTweet, s: RankerState): Option[Opinion]
+
+  private type StateChange = RankerState => RankerState
+  private val nothing: StateChange = {r => r}
+  private def recordRankedTweet(opinion: Opinion): StateChange =
+    { state => state.rankedATweet(opinion.points) }
+  private val recordOtherTweet: StateChange = {state => state.passedATweet }
+
+  def opinionate(initialState: RankerState = RankerState()): Process1[Message, Message] = {
+    import Process._
+    def go(state: RankerState): Process1[Message, Message] = {
+      await1 flatMap { m: Message =>
+        val (o: Message, stateChange: StateChange) = m match {
+          case rc@RollCall(_) => (rc.andMe(Notification("iDoThisToo", state)), nothing)
+          case i: IncomingTweet =>
+            val opinionO:Option[Opinion] = consider(i, state)
+            val o = opinionO match {
+              case Some(opinion) => (i.addMyTwoCents(opinion), recordRankedTweet(opinion))
+              case None => (m, recordOtherTweet)
+            }
+          case m => (m, nothing)
+        }
+        emit(o) fby go(stateChange(state))
+      }
+    }
+    go(initialState)
+  }
 }
 
 object iDoThisToo extends Ranker {
@@ -46,29 +71,7 @@ object iDoThisToo extends Ranker {
          Opinion(state.likelyAmountOfPoints, Some(s"I $words, too!"))
   }
 
-  def matches = pf.isDefinedAt(_, RankerState())
+  def consider(t: IncomingTweet, s: RankerState) = pf.lift(t,s)
 
-  def opinionate(initialState: RankerState = RankerState()): Process1[Message, Message] = {
-    import Process._
-    def go(state: RankerState): Process1[Message, Message] = {
-      await1 flatMap { m: Message =>
-        val opinionO:Option[Opinion] = pf.lift((m, state))
-        val o = (opinionO, m) match {
-          case (Some(opinion), i: IncomingTweet) => i.addMyTwoCents(opinion)
-          case (_, rc@RollCall(_)) => rc.andMe(Notification("iDoThisToo", state))
-          case (_, m) => m
-        }
-        val s = (m,opinionO) match {
-          case (i : IncomingTweet, Some(opinion)) =>
-            state.rankedATweet(opinion.points)
-          case (i: IncomingTweet, None) =>
-            state.passedATweet()
-          case _ => state
-        }
-        emit(o) fby go(s)
-      }
-    }
-    go(initialState)
-  }
 }
 

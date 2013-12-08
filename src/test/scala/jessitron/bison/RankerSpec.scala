@@ -74,7 +74,8 @@ object RankerSpec extends Properties("Rankers") {
   property("A ranker that learns from data coming in") = forAll(listOfN(100, realisticTweet), arbitraryDouble) {
     (incomingTweets, desiredAverageScore) =>
       val subject = iDoThisToo
-      val input = evenOut(incomingTweets, subject.matches)
+      def matches(i: IncomingTweet) = subject.consider(i, RankerState()).nonEmpty
+      val input = evenOut(incomingTweets, matches)
       val initialState = RankerState(targetAveragePoints = desiredAverageScore)
 
       val p = Process(input:_*) |> subject.opinionate(initialState) |> process1.drop(10) // reduce influence of initial state
