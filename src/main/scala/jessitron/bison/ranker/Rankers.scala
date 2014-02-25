@@ -25,7 +25,7 @@ object Rankers {
 
   def shortIsBetter: Process1[Message,Message] = simpleOpinion {
     i: IncomingTweet =>
-      val points = (70 - i.tweet.text.size) * (2.0 / 70)
+      val points = (70 - i.tweet.text.size) * (1.5 / 70)
       Some(Opinion(points, Some("Rusty and I agree")))
   }
 
