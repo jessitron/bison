@@ -49,7 +49,7 @@ object SearchInput {
   def apply(queryString: String, fetcher: Fetcher = new RealFetcher):
   Process[Task, String] =  {
     import Process._
-    val searchUrl = "http://api.twitter.com/1.1/search/tweets.json"
+    val searchUrl = "https://api.twitter.com/1.1/search/tweets.json"
     val NextMaxId = """"next_results": "?max_id=([0-9]*)&q""".r
     def nextPage(params: Map[String,String])(body: String) = emit(body) ++ (NextMaxId.findFirstIn(body) match {
       case Some(NextMaxId(max)) => go(params + ("max_id" -> max))
