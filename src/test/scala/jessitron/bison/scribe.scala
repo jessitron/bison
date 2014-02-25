@@ -24,7 +24,7 @@ object AuthorizationSetup
     System.out.print("Enter the consumer secret >>")
     val consumerSecret = in.nextLine()
 
-    val service = new ServiceBuilder().provider(classOf[TwitterApi]).
+    val service = new ServiceBuilder().debug().provider(classOf[TwitterApi]).
                   apiKey(consumerKey).
                   apiSecret(consumerSecret).
                   build()
@@ -59,7 +59,7 @@ object AuthorizationSetup
  //Now let's go and ask for a protected resource!
  System.out.println("Now we're going to access a protected resource...")
  val request = new OAuthRequest(Verb.GET, PROTECTED_RESOURCE_URL)
- request.addQuerystringParameter("q","#codemesh")
+ request.addQuerystringParameter("q","#CPL14")
  service.signRequest(accessToken, request)
  val response = request.send()
  System.out.println("Got it!  Lets see what we found...")
