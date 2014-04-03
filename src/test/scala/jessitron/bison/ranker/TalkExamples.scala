@@ -3,8 +3,9 @@ package jessitron.bison.ranker
 import org.scalacheck._
 import jessitron.bison._
 import scalaz.stream.Process
+import Prop._
 
-object ExampleSpec1 extends Properties("CapitalizationRanker 1") {
+object ExampleSpecA1 extends Properties("CapitalizationRanker 1") {
   import TalkExamples._
 
   property("Example: all capitals") = {
@@ -17,25 +18,26 @@ object ExampleSpec1 extends Properties("CapitalizationRanker 1") {
 
 }
 
-object ExampleSpec2 extends Properties("CapitalizationRanker 2") {
+object ExampleSpecA2 extends Properties("CapitalizationRanker 2") {
   import TalkExamples._
 
   property("Example: no capitals") = {
-    // weakness: duplication. Lots of it.
     val oneTweet = tweetThatSays("i am not happy at all")
 
     val output = processThroughRanker(Seq(oneTweet))
 
-    output.size == 1 &&
-    output.head.opinions.size == 1 &&
-    output.head.opinions.head == Opinion(-1.0, None)
-    // weakness: we didn't specify WHY this output is different.
-    // and that means the code might be using the wrong reason, that just happens to get these cases right.
+    val myOpinion = output.head.opinions.head
+    (myOpinion == Opinion(-1.0, None)) :| s"Unexpected opinion: $myOpinion"
   }
+
+}
+
+object ExampleSpec2 extends Properties("CapitalizationRanker 2") {
 
   import Common._
   import Prop._
-  property("Ranks tweets with more capitalized words higher") = forAll { listOfTweets: List[IncomingTweet] =>
+  property("Ranks tweets with more capitalized words higher") =
+    forAll { listOfTweets: List[IncomingTweet] =>
     // well, we could add a general property of generators here.
     // We could also generate exactly one tweet, and then change it to have more capitalized words.
     // Even, to continue capitalizing and un-capitalizing, to make a whole list. The top of which has a suggestion.
