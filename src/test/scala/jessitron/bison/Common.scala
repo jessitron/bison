@@ -47,6 +47,8 @@ object Common {
   } yield IncomingTweet(tweet, opinions)
 
   val someIncomingTweets: Gen[List[IncomingTweet]] = smallNumberOf(incomingTweet)
+  implicit val tweetListGenerator: Arbitrary[List[IncomingTweet]] =
+    Arbitrary(someIncomingTweets)
 
   val someRespondTos: Gen[List[RespondTo]] = for {
     n <- smallInt
