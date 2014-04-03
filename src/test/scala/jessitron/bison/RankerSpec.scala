@@ -10,6 +10,8 @@ import Prop._
 object RankerSpec extends Properties("Rankers") {
   import Common._
 
+  // Idea: generalize this to a property of all well-behaved rankers:
+  // adds at most one opinion, doesn't mess with anything else
   property("The random ranker always adds an opinion") = forAll(incomingTweet){
     incoming: IncomingTweet =>
       val p = Process(incoming) |> Rankers.randomo
