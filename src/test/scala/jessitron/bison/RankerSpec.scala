@@ -126,7 +126,7 @@ object RankerSpec extends Properties("Rankers") {
       val p = Process(incomingTweets:_*) |> subject
       val output = p.toList map { _.asInstanceOf[IncomingTweet]}
 
-      def round(d: Double) = (d * 100).ceil
+      def round(d: Double) = Math.round(d * 100)
 
       val inputAndOutput = incomingTweets zip output
       val tweetAndScore = inputAndOutput map { case (i, o) =>
