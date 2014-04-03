@@ -43,8 +43,15 @@ object ExampleSpecB2 extends Properties("CapitalizationRanker B2") {
 
       (listOfTweets.size == output.size) :| s"${listOfTweets.size} went in, ${output.size} came out!" &&
       (inputAndOutput.forall{
-        case(in, out) => in.opinions.size == out.opinions.size - 2
-      }) :| "Wrong number of opinions"
+        case(in, out) => in.opinions.size == out.opinions.size - 1
+      }) :| "Wrong number of opinions" &&
+      inputAndOutput.forall{
+        case(in, out) => in.tweet == out.tweet
+      } :| "A tweet was altered!!" &&
+      Prop.all(inputAndOutput.map{
+        case(in, out) => Prop(in.opinions.forall(out.opinions.contains(_))) :|
+                         s"An opinion was altered in tweet: $in"
+      }:_*)
     }
 }
 
