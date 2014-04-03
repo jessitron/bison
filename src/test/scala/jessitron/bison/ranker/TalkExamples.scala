@@ -5,7 +5,7 @@ import jessitron.bison._
 import scalaz.stream.Process
 import Prop._
 
-object ExampleSpecA1 extends Properties("CapitalizationRanker 1") {
+object ExampleSpecA1 extends Properties("CapitalizationRanker A1") {
   import TalkExamples._
 
   property("Example: all capitals") = {
@@ -18,7 +18,7 @@ object ExampleSpecA1 extends Properties("CapitalizationRanker 1") {
 
 }
 
-object ExampleSpecA2 extends Properties("CapitalizationRanker 2") {
+object ExampleSpecA2 extends Properties("CapitalizationRanker A2") {
   import TalkExamples._
 
   property("Example: no capitals") = {
@@ -32,7 +32,23 @@ object ExampleSpecA2 extends Properties("CapitalizationRanker 2") {
 
 }
 
-object ExampleSpec2 extends Properties("CapitalizationRanker 2") {
+object ExampleSpecB2 extends Properties("CapitalizationRanker B2") {
+  import Common._
+  import TalkExamples._
+
+  property("Adds exactly one opinion") =
+    forAll { listOfTweets: List[IncomingTweet] =>
+      val output = processThroughRanker(listOfTweets)
+      val inputAndOutput = listOfTweets.zip(output)
+
+      (listOfTweets.size == output.size) :| s"${listOfTweets.size} went in, ${output.size} came out!" &&
+      (inputAndOutput.forall{
+        case(in, out) => in.opinions.size == out.opinions.size - 2
+      }) :| "Wrong number of opinions"
+    }
+}
+
+object ExampleSpecX extends Properties("CapitalizationRanker 2") {
 
   import Common._
   import Prop._
