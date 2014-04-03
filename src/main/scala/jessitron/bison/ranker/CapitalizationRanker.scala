@@ -4,6 +4,11 @@ import scalaz.stream._
 import jessitron.bison._
 
 object CapitalizationRanker {
+  def apply1(): Process1[IncomingTweet, IncomingTweet] =
+    process1.lift { (in) =>
+      in.addMyTwoCents(Opinion(1.0, Some("I Agree Completely")))
+    }
+
   def apply(): Process1[IncomingTweet, IncomingTweet] =
     process1.lift { (in) =>
       if (in.tweet.text.startsWith("I"))
