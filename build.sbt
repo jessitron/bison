@@ -2,7 +2,7 @@ name := "jessitron-bison"
 
 version := "0.1-SNAPSHOT"
 
-scalaVersion := "2.10.2"
+scalaVersion := "2.10.3"
 
 //resolvers ++= Seq("snapshots" at "http://oss.sonatype.org/content/repositories/snapshots")
 
