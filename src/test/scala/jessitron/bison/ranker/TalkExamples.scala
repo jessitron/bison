@@ -41,7 +41,7 @@ object ExampleSpec2 extends Properties("CapitalizationRanker 2") {
     // well, we could add a general property of generators here.
     // We could also generate exactly one tweet, and then change it to have more capitalized words.
     // Even, to continue capitalizing and un-capitalizing, to make a whole list. The top of which has a suggestion.
-     false
+     true
   }
 }
 
