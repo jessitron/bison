@@ -18,4 +18,17 @@ object CapitalizationRankerSpec extends Properties("CapitalizationRanker") {
     output.head.opinions.head == Opinion(1.0, Some("I Agree Completely"))
   }
 
+  property("Example: no capitals") = {
+    val oneTweet = IncomingTweet(TweetDetail("i am not happy at all", "some-tweet-id", TwitterUser("jessitron")))
+
+    val result = Process(oneTweet) |> CapitalizationRanker()
+
+    val output = result.toList.map{_.asInstanceOf[IncomingTweet]}
+
+    output.size == 1 &&
+    output.head.opinions.size == 1 &&
+    output.head.opinions.head == Opinion(-1.0, None)
+  }
+
+
 }
