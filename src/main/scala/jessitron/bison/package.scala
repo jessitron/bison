@@ -52,11 +52,14 @@ package object bison {
   object TwitterUser {
      implicit val format: JsonFormat[TwitterUser] = jsonFormat1(apply)
   }
-  case class Retweeted(id_str:TweetId) // I would reuse TweetDetail except for a bug in spray-json. issue #77
+  case class Retweeted(id_str:TweetId) // I would reuse TweetDetail except for a strangeness in spray-json. issue #77
   case object Retweeted {
      implicit val format: JsonFormat[Retweeted] = jsonFormat1(apply)
   }
-  case class TweetDetail(text: TweetContents, id_str: TweetId, user: TwitterUser, retweeted_status: Option[Retweeted] = None)
+  case class TweetDetail(text: TweetContents,
+                         id_str: TweetId,
+                         user: TwitterUser,
+                         retweeted_status: Option[Retweeted] = None)
   case object TweetDetail {
      implicit val format: JsonFormat[TweetDetail] = jsonFormat4(apply)
   }
