@@ -7,23 +7,42 @@ import Gen._
  * Generators used in testing
  */
 object Common {
-  val smallInt = choose(1, 7)
-  def alphaStr(n: Int): Gen[String] = listOfN(n, alphaChar) map {_.mkString}
+
+  implicit val tweetListGenerator: Arbitrary[List[IncomingTweet]] =
+    Arbitrary(someIncomingTweets)
+
+  val someIncomingTweets: Gen[List[IncomingTweet]] = smallNumberOf(incomingTweet)
 
   def smallNumberOf[A](g: Gen[A]): Gen[List[A]] = for {
     n <- smallInt
     list <- listOfN(n, g)
   } yield list
 
-  val tweetText: Gen[String] = for {
-    l <- choose(1, 120)
-    str <- alphaStr(l)
-   } yield str
+  val smallInt = choose(1, 7)
+
+  val incomingTweet: Gen[IncomingTweet] = for {
+    opinionCount <- choose(0,5)
+    opinions <- listOfN(opinionCount, opinion)
+    tweet <- tweetDetail
+  } yield IncomingTweet(tweet, opinions)
+
+  def word(n: Int): Gen[String] = listOfN(n, alphaChar) map {_.mkString}
 
   val tweetId: Gen[TweetId] = choose(10000, 10000000) map {_.toString}
+
+  def wordOfRandomLength = for {
+    n <- smallInt
+    w <- word(n)
+  } yield w
+
+  val tweetText: Gen[String] = for {
+    n <- choose(1, 20)
+    words <- listOfN(n, wordOfRandomLength)
+   } yield words.mkString(" ")
+
   val username: Gen[String] = for {
     i <- choose(2, 15)
-    str <- alphaStr(i)
+    str <- word(i)
   } yield str
   val twitterUser: Gen[TwitterUser] = username map {TwitterUser(_)}
   val tweetDetail: Gen[TweetDetail] = for {
@@ -40,15 +59,6 @@ object Common {
     textOption <- suggestedText
   } yield Opinion(score, textOption)
 
-  val incomingTweet: Gen[IncomingTweet] = for {
-    opinionCount <- choose(0,5)
-    opinions <- listOfN(opinionCount, opinion)
-    tweet <- tweetDetail
-  } yield IncomingTweet(tweet, opinions)
-
-  val someIncomingTweets: Gen[List[IncomingTweet]] = smallNumberOf(incomingTweet)
-  implicit val tweetListGenerator: Arbitrary[List[IncomingTweet]] =
-    Arbitrary(someIncomingTweets)
 
   val someRespondTos: Gen[List[RespondTo]] = for {
     n <- smallInt
