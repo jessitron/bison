@@ -55,16 +55,34 @@ object ExampleSpecB2 extends Properties("CapitalizationRanker B2") {
     }
 }
 
-object ExampleSpecX extends Properties("CapitalizationRanker 2") {
-
+object ExampleSpecX extends Properties("CapitalizationRanker 3") {
+  import TalkExamples._
   import Common._
   import Prop._
   property("Ranks tweets with more capitalized words higher") =
-    forAll { listOfTweets: List[IncomingTweet] =>
-    // well, we could add a general property of generators here.
-    // We could also generate exactly one tweet, and then change it to have more capitalized words.
-    // Even, to continue capitalizing and un-capitalizing, to make a whole list. The top of which has a suggestion.
-     true
+    forAll(tweetDetail) { tweetDetail =>
+      !firstWordIsCapitalized(tweetDetail) ==> {
+        val moreCapital = capitalizeFirstWord(tweetDetail)
+
+        val output = processThroughRanker(Seq(tweetDetail, moreCapital).map(IncomingTweet(_)))
+
+        val Seq(lowerTweet, higherTweet) = output
+        (lowerTweet.totalScore < higherTweet.totalScore) :|
+           s"Capitalized tweet didn't get a higher score: ${lowerTweet.totalScore} ${higherTweet.totalScore}"
+      }
+  }
+
+  def firstWordIsCapitalized(t: TweetDetail) = {
+    // lame!
+    t.text.charAt(0) >= 'A' && t.text.charAt(0) <= 'Z'
+  }
+
+  def capitalizeFirstWord(t: TweetDetail) = {
+    // also lame!!
+    val oldText = t.text
+    val newText = oldText.substring(0,1).toUpperCase + oldText.substring(1)
+
+    t.copy(text = newText)
   }
 }
 
