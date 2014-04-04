@@ -35,12 +35,6 @@ object CapitalizationRankerSpec extends Properties("CapitalizationRanker") {
   import Common._
   import Prop._
 
-  property("Ranks tweets with more capitalized words higher") = forAll { listOfTweets: List[IncomingTweet] =>
-    // well, we could add a general property of generators here.
-    // We could also generate exactly one tweet, and then change it to have more capitalized words.
-    // Even, to continue capitalizing and un-capitalizing, to make a whole list. The top of which has a suggestion.
-     true
-  }
 
   def processThroughRanker(input: Seq[IncomingTweet]): List[IncomingTweet] = {
     val result = Process(input:_*) |> CapitalizationRanker()
@@ -48,6 +42,5 @@ object CapitalizationRankerSpec extends Properties("CapitalizationRanker") {
   }
 
   def tweetThatSays(text: String) = IncomingTweet(TweetDetail(text, "some-tweet-id", TwitterUser("jessitron")))
-
 
 }

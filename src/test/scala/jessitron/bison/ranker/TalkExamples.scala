@@ -64,7 +64,8 @@ object ExampleSpecX extends Properties("CapitalizationRanker 3") {
       !firstWordIsCapitalized(tweetDetail) ==> {
         val moreCapital = capitalizeFirstWord(tweetDetail)
 
-        val output = processThroughRanker(Seq(tweetDetail, moreCapital).map(IncomingTweet(_)))
+        val input = Seq(tweetDetail, moreCapital).map(IncomingTweet(_))
+        val output = processThroughRanker(input)
 
         val Seq(lowerTweet, higherTweet) = output
         (lowerTweet.totalScore < higherTweet.totalScore) :|
