@@ -6,6 +6,7 @@ import org.scribe.builder._
 import org.scribe.builder.api._
 import org.scribe.model._
 import org.scribe.oauth._
+import scodec.bits.ByteVector
 
 // This is totally right out of scribe, modified for my own purposes
 object AuthorizationSetup
@@ -86,7 +87,7 @@ object AuthorizationSetup
    import scalaz.stream.{Process => P}
 
    val fileWriter = scalaz.stream.io.fileChunkW(KEY_FILE_LOCATION)
-   def toBytes(s: String): Array[Byte] = s.toCharArray.map { _.toByte }
+   def toBytes(s: String): ByteVector = ByteVector.view(s.getBytes)
 
    val p = P(accessToken).toSource |> writeJson |> scalaz.stream.process1.lift(toBytes) through fileWriter
    p.run.run

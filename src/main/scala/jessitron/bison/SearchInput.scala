@@ -5,6 +5,7 @@ import scalaz.concurrent.Task
 
 import spray.json._
 import DefaultJsonProtocol._
+import scodec.bits.ByteVector
 
 case class AccessToken(consumerKey: String, consumerSecret: String, userKey: String, userSecret: String)
 object AccessToken {
@@ -16,7 +17,7 @@ object AccessToken {
 object SearchInput {
 
   def streamToJson(input: java.io.InputStream) = {
-      val bytesToString = process1.lift{ab: Array[Byte] => ab.map{_.toChar}.mkString}
+      val bytesToString = process1.lift{ab: ByteVector=> ab.toArray.map{_.toChar}.mkString}
       import scalaz._
       import scalaz.std.AllInstances._
       val source = ((Process(10000).toSource.repeat) through io.chunkR(input))
@@ -99,7 +100,7 @@ object TwitterConnection {
   val keyFile = "keys.json"
   lazy val accessToken = TwitterConnection.accessTokenSource
 
-  def accessTokenSource = {
+  def accessTokenSource:Task[Option[AccessToken]] = {
       val inputFile = getClass.getClassLoader().getResourceAsStream(keyFile)
       val p = SearchInput.streamToJson(inputFile) |> SearchInput.parseJson[AccessToken]
       p.runLast

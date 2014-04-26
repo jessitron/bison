@@ -37,8 +37,8 @@ object RespondSpec extends Properties("Respond") {
 
   property("Simple example") = {
     val input = RespondTo(IncomingTweet(
-      TweetDetail("boogers", "123", TwitterUser("josevalim")),
-      List(Opinion(1.0, Some("yeah baby")))))
+      TweetDetail("He saw us!", "123", TwitterUser("lannisterc")),
+      List(Opinion(1.0, Some("The things we do for love")))))
 
     val subject = Respond.responder
     val p = Process(input) |> subject
@@ -46,7 +46,7 @@ object RespondSpec extends Properties("Respond") {
 
     (output.length ?= 1) &&
     (output.head ?= TweetThis(
-      OutgoingTweet("@josevalim yeah baby", Some("123")), Some(input.tweet)))
+      OutgoingTweet("@lannisterc The things we do for love", Some("123")), Some(input.tweet)))
   }
   // test containsSuggestion
 
