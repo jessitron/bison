@@ -4,7 +4,7 @@ import scalaz.stream._
 import jessitron.bison._
 
 object CapitalizationRanker {
-  def apply(): Process1[IncomingTweet, IncomingTweet] =
+  def apply1(): Process1[IncomingTweet, IncomingTweet] =
     process1.lift { (in) =>
       in.addMyTwoCents(Opinion(1.0, Some("I Agree Completely")))
     }
@@ -17,7 +17,7 @@ object CapitalizationRanker {
         in.addMyTwoCents(Opinion(-1.0))
     }
 
-  def apply3(): Process1[IncomingTweet, IncomingTweet] =
+  def apply(): Process1[IncomingTweet, IncomingTweet] =
     process1.lift { (in) =>
       val firstchars:Seq[Char] = in.tweet.text.split(" ").filter(_.nonEmpty).map(_.charAt(0))
       val caps = firstchars.count(_ <= 'Z')
