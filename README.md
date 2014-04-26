@@ -18,23 +18,6 @@ and choose AuthorizationSetup. This will step you through authorizing
 your twitter user on the app, and also create the keys.json file that
 the application will look for.
 
-## Notes for building it
-
-I'm on snapshot-0.4 of scalaz-stream, which isn't released at this time.
-Today (25 Feb 2014) I'm also using a fix that isn't in the main library
-yet. Clone jessitron/scalaz-stream and use the master branch, or else
-running a wye can StackOverflowError.
-"sbt publish-local" will put the library in your local ivy cache, so the
-bison can find it.
-
-In addition, twitter's API has changed recently. Cloning fernandezpablo85/scribe-java
-fixed that. It builds with maven, and I don't know how to publish local
-with that, so I copied the jar into the lib directory for this bison
-project, and then removed the library dependency from build.sbt, causing
-sbt to find the jar in the lib.
-
-Sorry - the front end of the technology curve is a wavy place to be.
-
 ## The demo code
 Here's what I ran during the talk, in the repl:
 
