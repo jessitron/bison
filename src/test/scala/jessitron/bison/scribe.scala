@@ -11,18 +11,18 @@ import scodec.bits.ByteVector
 // This is totally right out of scribe, modified for my own purposes
 object AuthorizationSetup
 {
-  val PROTECTED_RESOURCE_URL = "http://api.twitter.com/1.1/search/tweets.json"
+  val PROTECTED_RESOURCE_URL = "https://api.twitter.com/1.1/search/tweets.json"
   val KEY_FILE_LOCATION = "src/main/resources/keys.json"
 
   def main(args: Array[String])
   {
     val in = new Scanner(System.in)
     println("First, go to https://dev.twitter.com/apps/ and create an app.")
-    println("You'll need its Consumer Key and its Consumer Secret.")
+    println("You'll need its API Key and its API Secret.")
     println("")
-    System.out.print("Enter the consumer key >>")
+    System.out.print("Enter the API key >>")
     val consumerKey = in.nextLine()
-    System.out.print("Enter the consumer secret >>")
+    System.out.print("Enter the API secret >>")
     val consumerSecret = in.nextLine()
 
     val service = new ServiceBuilder().debug().provider(classOf[TwitterApi]).
